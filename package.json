@@ -1,0 +1,26 @@
+{
+  "name": "destination-unknown",
+  "version": "1.0.0",
+  "description": "A flight price comparison site that gives you itinerary recommendations for your destination",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachelnewby/destination-unknown.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachelnewby/destination-unknown/issues"
+  },
+  "homepage": "https://github.com/rachelnewby/destination-unknown#readme",
+  "dependencies": {
+    "jest": "^29.4.3"
+  },
+  "devDependencies": {
+    "jest-fetch-mock": "^3.0.3"
+  }
+}
