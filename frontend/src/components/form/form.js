@@ -1,20 +1,48 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import styles from '/form.css';
+import { Form } from 'react-router-dom';
+import styles from './form.css';
+
 // import the backend thing that works - with the api key stuff
 function FlightSearch() {
     const [formInput, setFormInput] = useState({
-        origin: '',
-        destination: '',
+        inboundDestination: '',
+        outboundDestination: '',
         departureDate: '',
         returnDate: '',
-        adults: ''
+        numberOfTravellers: ''
     });
+    handleNumberOfTravellersChange = (event) => {
+        this.setState({ numberOfTravellers: event.target.value });
+      }
+    
+      handleOutboundDestinationChange = (event) => {
+        this.setState({ outboundDestination: event.target.value });
+      }
+    
+      handleInboundDestinationChange = (event) => {
+        this.setState({ inboundDestination: event.target.value });
+      }
+    
+      handleDepartureDateChange = (event) => {
+        this.setState({ departureDate: event.target.value });
+      }
+    
+      handleReturnDateChange = (event) => {
+        this.setState({ returnDate: event.target.value });
+      }
 
-    const handleSubmit = (event) => {
+      handleSubmit = (event) => {
         event.preventDefault();
-        // call your backend API function here with the formInput data
-    };
+        const { numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate } = this.state;
+        FlightClient.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
+          .then((flights) => {
+            // handle the API response
+          })
+          .catch((error) => {
+            // handle the error
+          });
+      }
 
     return (
         <div className={styles.container}>
@@ -24,8 +52,12 @@ function FlightSearch() {
                         <h4>Flight</h4>
                         <span className={styles.textMuted}>Travel the world with us</span>
                     </div>
+
+
+                    
+
                     <div className={styles.colLg6 + ' ' + styles.colMd12}>
-                        <div className={styles.formFloating}>
+                       <div className={styles.formFloating}>
                             <input type="text" className={styles.formControl} placeholder="FLYING FROM" />
                             <label>FLYING FROM</label>
                         </div>
@@ -39,13 +71,13 @@ function FlightSearch() {
                     <div className={styles.colLg6 + ' ' + styles.colMd12}>
                         <div className={styles.formFloating}>
                             <input type="date" className={styles.formControl} placeholder="DEPARTING" />
-                            <label>DEPARTING</label>
+                            <label>DEPARTING DATE</label>
                         </div>
                     </div>
                     <div className={styles.colLg6 + ' ' + styles.colMd12}>
                         <div className={styles.formFloating}>
                             <input type="date" className={styles.formControl} placeholder="RETURNING" />
-                            <label>RETURNING</label>
+                            <label>RETURNING DATE</label>
                         </div>
                     </div>
                     <div className={styles.colLg4 + ' ' + styles.colMd12}>
@@ -74,3 +106,5 @@ function FlightSearch() {
 }
 
 ReactDOM.render(<FlightSearch />, document.getElementById('root'));
+
+export default Form;
