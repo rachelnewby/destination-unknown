@@ -1,5 +1,5 @@
 import React from 'react';
-import FlightClient from '../../../../api/client/flightClient'
+import FlightClient from './flightClient';
 import './form.css';
 
 class FlightForm extends React.Component {
