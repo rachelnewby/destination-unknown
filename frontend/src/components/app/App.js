@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+import Form from '../form/Form';
 
 function App() {
   return (
@@ -15,9 +17,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+
         </a>
       </header>
+      <Form />
     </div>
   );
 }
