@@ -1,5 +1,6 @@
 import React from 'react';
 import FlightClient from './flightClient';
+import airportCodes from 'airport-codes';
 import './form.css';
 
 class FlightForm extends React.Component {
@@ -16,7 +17,11 @@ class FlightForm extends React.Component {
   }
 
   handleOutboundDestinationChange = (event) => {
-    this.setState({ outboundDestination: event.target.value });
+    const { value } = event.target;
+    const matches = airportCodes({ name: value });
+    const airportCode = matches[0] ? matches[0].iata : '';
+    this.setState({ outboundDestination: airportCode });
+    // this.setState({ outboundDestination: event.target.value });
   }
 
   handleInboundDestinationChange = (event) => {
@@ -55,7 +60,12 @@ class FlightForm extends React.Component {
         <label>
           Outbound destination:
           </label>
-          <input className="form-control" type="text" value={outboundDestination} onChange={this.handleOutboundDestinationChange} />
+          <input className="form-control" type="text" value={outboundDestination} onChange={this.handleOutboundDestinationChange} list="outbound-destinations"/>
+            <datalist id="outbound-destinations">
+              {airportCodes().map((airport) => (
+                <option key={airport.iata} value={`${airport.name}, ${airport.countryName}`} />
+              ))}
+            </datalist>
         </div>
         </div>
         <br />
