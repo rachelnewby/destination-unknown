@@ -1,13 +1,20 @@
-const apiKey = require('./apikey')
+const apiKey = require('./apikey');
+const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+const headers = {
+  'Origin': 'https://localhost:3000'
+}
 
 class FlightClient {
   loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate){
-    return fetch(`https://app.goflightlabs.com/search-best-flights?access_key=${apiKey}&adults=${numberOfTravellers}&origin=${outboundDestination}&destination=${inboundDestination}&departureDate=${departureDate}&returnDate=${returnDate}`)
-    .then((response) => response.json())
-    // buckets[1] an array that refers to the cheapest flights portion of the api response
-    .then((flights) => {return flights.data.buckets[1]})
-    .catch((error) => {return error})
+    const url = `${corsAnywhereUrl}https://app.goflightlabs.com/search-best-flights?access_key=${apiKey}&adults=${numberOfTravellers}&origin=${outboundDestination}&destination=${inboundDestination}&departureDate=${departureDate}&returnDate=${returnDate}`;
+    return fetch(url, {headers})
+      .then((response) => response.json())
+      .then((flights) => {
+        console.log('Flights:', flights); // Add this line to log the flights response
+        return flights.data.buckets[1]
+      })
+      .catch((error) => {return error})
   }
 }
 
-module.exports = FlightClient
+module.exports = FlightClient;

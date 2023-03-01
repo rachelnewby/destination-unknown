@@ -1,6 +1,5 @@
 import React from 'react';
 import FlightClient from './flightClient';
-import airportCodes from 'airport-codes';
 import './form.css';
 
 class FlightForm extends React.Component {
@@ -17,11 +16,7 @@ class FlightForm extends React.Component {
   }
 
   handleOutboundDestinationChange = (event) => {
-    const { value } = event.target;
-    const matches = airportCodes({ name: value });
-    const airportCode = matches[0] ? matches[0].iata : '';
-    this.setState({ outboundDestination: airportCode });
-    // this.setState({ outboundDestination: event.target.value });
+    this.setState({ outboundDestination: event.target.value });
   }
 
   handleInboundDestinationChange = (event) => {
@@ -39,13 +34,12 @@ class FlightForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate } = this.state;
-    FlightClient.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
+    const flightClient = new FlightClient();
+    flightClient.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
       .then((flights) => {
         console.log('API response:', flights);
-        // handle the API response
       })
       .catch((error) => {
-        // handle the error
       });
   }
 
@@ -60,12 +54,7 @@ class FlightForm extends React.Component {
         <label>
           Outbound destination:
           </label>
-          <input className="form-control" type="text" value={outboundDestination} onChange={this.handleOutboundDestinationChange} list="outbound-destinations"/>
-            <datalist id="outbound-destinations">
-              {airportCodes().map((airport) => (
-                <option key={airport.iata} value={`${airport.name}, ${airport.countryName}`} />
-              ))}
-            </datalist>
+          <input className="form-control" type="text" value={outboundDestination} onChange={this.handleOutboundDestinationChange} />
         </div>
         </div>
         <br />
@@ -94,11 +83,8 @@ class FlightForm extends React.Component {
         <div class="form__input">
         <label>
         Number of travellers:
-        <select value={numberOfTravellers} onChange={this.handleNumberOfTravellersChange}>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-        </select>
-        </label>
+          </label>
+          <input className="form-control" type="text" value={numberOfTravellers} onChange={this.handleNumberOfTravellersChange} />
         </div>
         </div>
         <br />
