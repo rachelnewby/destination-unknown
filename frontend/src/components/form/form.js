@@ -69,14 +69,14 @@ class FlightForm extends React.Component {
         <div class="form__row">
         <div class="form__input">
         <label>Departure date:</label>
-          <input className="form-control" type="date" value={departureDate} onChange={this.handleDepartureDateChange} />
+          <input className="form-control" type="text" placeholder="YYYY-MM-DD" value={departureDate} onChange={this.handleDepartureDateChange} />
         </div>
         </div>
         <br />
         <div class="form__row">
         <div class="form__input">
         <label>Return date:</label>
-          <input className="form-control" type="date" value={returnDate} onChange={this.handleReturnDateChange} />
+          <input className="form-control" type="text" placeholder="YYYY-MM-DD" value={returnDate} onChange={this.handleReturnDateChange} />
         </div>
         </div>
         <br />
