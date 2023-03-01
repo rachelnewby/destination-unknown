@@ -1,5 +1,5 @@
 import React from 'react';
-import FlightClient from '../../client/flightClient'
+import FlightClient from '../../../../api/client/flightClient'
 import './form.css';
 
 class FlightForm extends React.Component {
@@ -44,7 +44,6 @@ class FlightForm extends React.Component {
       });
   }
 
-
   render() {
     const { numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate } = this.state;
     return (
@@ -84,8 +83,11 @@ class FlightForm extends React.Component {
         <div class="form__row">
         <div class="form__input">
         <label>
-          Number of travellers:
-          <input type="number" value={numberOfTravellers} onChange={this.handleNumberOfTravellersChange} />
+        Number of travellers:
+        <select value={numberOfTravellers} onChange={this.handleNumberOfTravellersChange}>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+        </select>
         </label>
         </div>
         </div>
