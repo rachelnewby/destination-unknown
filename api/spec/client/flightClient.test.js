@@ -14,6 +14,7 @@ describe('FlightClient', () => {
     const returnDate = "2023-03-20";
     client.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate).then((flights) => {
       // buckets[1] an array that refers the cheapest flights portion of the api response
+      console.log(mockResponse.data.buckets[1])
       expect(flights).toEqual(mockResponse.data.buckets[1])
     })
   })
