@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FlightClient from './flightClient';
-import PriceChart from '../priceChart/priceChart'
 import './form.css';
+import PriceChart from '../priceChart/priceChart';
 
 function FlightForm() {
   const [numberOfTravellers, setNumberofTravellers] = useState('');
@@ -9,22 +9,22 @@ function FlightForm() {
   const [inboundDestination, setInboundDestination] = useState('');
   const [departureDate, setDepartureDate] = useState('');
   const [returnDate, setReturnDate] = useState('');
-  const [flights, setFlights] = useState([])
+  const [flights, setFlights] = useState(null);
+
+  useEffect(() => {
+    console.log('Flights updated:', flights);
+  }, [flights]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const client = new FlightClient();
-    client.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
-    .then((flights) => {
-      console.log(`API response`, flights)
-      setFlights(flights)
-    })
-    .catch((err) => {return err})
-    // console.log("number of travellers " + numberOfTravellers)
-    // console.log("outboundDestination " + outboundDestination)
-    // console.log("inbdoundDestination " + inboundDestination)
-    // console.log("departure Date " + departureDate)
-    // console.log("return Date " + returnDate)
+    const flightClient = new FlightClient();
+    flightClient.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
+      .then((flights) => {
+        setFlights(flights);
+        console.log(flights)
+      })
+      .catch((error) => {
+      });
   };
 
   return (
@@ -71,8 +71,8 @@ function FlightForm() {
         </div>
         <br />
         <button type="submit">Search flights</button>
-        <PriceChart chartData={flights}/>
       </form>
+      {flights && <PriceChart chartData={flights} />}
     </main>
   );
 };
