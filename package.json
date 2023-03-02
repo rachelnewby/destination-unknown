@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/rachelnewby/destination-unknown#readme",
   "dependencies": {
-    "jest": "^29.4.3"
+    "airport-codes": "^1.0.2",
+    "cors": "^2.8.5",
+    "jquery": "^3.6.3"
   },
   "devDependencies": {
+    "jest": "^29.4.3",
     "jest-fetch-mock": "^3.0.3"
   }
 }
