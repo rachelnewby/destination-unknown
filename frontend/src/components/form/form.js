@@ -72,7 +72,9 @@ function FlightForm() {
         <br />
         <button type="submit">Search flights</button>
       </form>
+      <div className="price-chart">
       {flights && <PriceChart chartData={flights} />}
+      </div>
     </main>
   );
 };

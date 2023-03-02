@@ -107,3 +107,6 @@
   .btn {
     cursor: pointer;
   }
+  .price-chart {
+    margin-top: 20px;
+  }
