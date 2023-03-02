@@ -11,11 +11,17 @@ function FlightForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("number of travellers " + numberOfTravellers)
-    console.log("outboundDestination " + outboundDestination)
-    console.log("inbdoundDestination " + inboundDestination)
-    console.log("departure Date " + departureDate)
-    console.log("return Date " + returnDate)
+    const client = new FlightClient();
+    client.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
+    .then((flights) => {
+      console.log(`API response`, flights)
+    })
+    .catch((err) => {return err})
+    // console.log("number of travellers " + numberOfTravellers)
+    // console.log("outboundDestination " + outboundDestination)
+    // console.log("inbdoundDestination " + inboundDestination)
+    // console.log("departure Date " + departureDate)
+    // console.log("return Date " + returnDate)
   };
 
   return (
