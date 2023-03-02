@@ -16,45 +16,10 @@
     text-decoration: none;
   }
   
-  body {
+  /* body {
     min-height: 100vh;
     background-color: var(--bg);
-  }
-  
-  .top-nav {
-    display: flex;
-    padding-inline: 2em;
-    align-items: center;
-  }
-  
-  .logo {
-    margin-right: auto;
-  }
-  
-  .logo__link {
-    color: var(--ac);
-  }
-  
-  .nav__list {
-    list-style: none;
-    display: flex;
-  }
-  
-  .nav__item:last-child {
-    margin-left: 4em;
-  }
-  
-  .nav__link {
-    display: block;
-    color: var(--fg);
-    padding: 1em 1em;
-  }
-  
-  .nav__link:hover {
-    background-color: var(--fg);
-    color: var(--bg);
-  }
-  
+  } */
   .content {
     min-height: 80vh;
     display: grid;

@@ -1,4 +1,11 @@
+:root {
+  --bg: hsl(210, 15%, 15%);
+  --fg: hsl(30 , 5%, 85%);
+  --ac: hsl(160, 80%, 65%);
+}
+
 .App {
+  background-color: var(--bg);
   text-align: center;
 }
 
@@ -12,6 +19,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;

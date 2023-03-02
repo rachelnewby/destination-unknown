@@ -5,7 +5,7 @@ import FlightForm from '../form/form';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <FlightForm />
     </div>
   );
