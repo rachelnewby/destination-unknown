@@ -2,15 +2,6 @@ import React, { useState } from 'react';
 import FlightClient from './flightClient';
 import './form.css';
 
-// class FlightForm extends React.Component {
-//   state = {
-//     numberOfTravellers: '',
-//     outboundDestination: '',
-//     inboundDestination: '',
-//     departureDate: '',
-//     returnDate: ''
-//   }
-
 function FlightForm() {
   const [numberOfTravellers, setNumberofTravellers] = useState('');
   const [outboundDestination, setOutboundDestination] = useState('');
@@ -20,11 +11,11 @@ function FlightForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("number of travellers" + numberOfTravellers)
-    console.log("outboundDestination" + outboundDestination)
-    console.log("inbdoundDestination" + inboundDestination)
-    console.log("departure Date" + departureDate)
-    console.log("return Date" + returnDate)
+    console.log("number of travellers " + numberOfTravellers)
+    console.log("outboundDestination " + outboundDestination)
+    console.log("inbdoundDestination " + inboundDestination)
+    console.log("departure Date " + departureDate)
+    console.log("return Date " + returnDate)
   };
 
   return (

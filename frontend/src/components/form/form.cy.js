@@ -16,6 +16,26 @@ describe('FlightForm', () => {
     cy.get('button').click();
     cy.get('form').submit();
   })
+
+  // it('console logs the correct information', () => {
+  //   cy.mount(<FlightForm />)
+  //   cy.get('.form__row:nth-child(1) .form-control').click();
+  //   cy.get('.form__row:nth-child(1) .form-control').type('LAX');
+  //   cy.get('.form__row:nth-child(3) .form-control').click();
+  //   cy.get('.form__row:nth-child(3) .form-control').type('FCO');
+  //   cy.get('.form__row:nth-child(5) .form-control').click();
+  //   cy.get('.form__row:nth-child(5) .form-control').type('2023-07-01');
+  //   cy.get('.form__row:nth-child(7) .form-control').click();
+  //   cy.get('.form__row:nth-child(7) .form-control').type('2023-07-08');
+  //   cy.get('.form__row:nth-child(9) .form-control').click();
+  //   cy.get('.form__row:nth-child(9) .form-control').type('1');
+  //   cy.get('button').click();
+  //   cy.get('form').submit();
+  //   cy.window().then((win) => {
+  //     cy.spy(win.console, 'log').as('consoleLogSpy');
+  //     cy.get('@consoleLogSpy').should("number of travellers " + "1")
+  //   });
+  // })
 })
 
 
