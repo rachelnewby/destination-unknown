@@ -1,81 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FlightClient from './flightClient';
 import './form.css';
 
-class FlightForm extends React.Component {
-  state = {
-    numberOfTravellers: '',
-    outboundDestination: '',
-    inboundDestination: '',
-    departureDate: '',
-    returnDate: ''
-  }
+// class FlightForm extends React.Component {
+//   state = {
+//     numberOfTravellers: '',
+//     outboundDestination: '',
+//     inboundDestination: '',
+//     departureDate: '',
+//     returnDate: ''
+//   }
 
-  handleNumberOfTravellersChange = (event) => {
-    this.setState({ numberOfTravellers: event.target.value });
-  }
+function FlightForm() {
+  const [numberOfTravellers, setNumberofTravellers] = useState('');
+  const [outboundDestination, setOutboundDestination] = useState('');
+  const [inboundDestination, setInboundDestination] = useState('');
+  const [departureDate, setDepartureDate] = useState('');
+  const [returnDate, setReturnDate] = useState('');
 
-  handleOutboundDestinationChange = (event) => {
-    this.setState({ outboundDestination: event.target.value });
-  }
-
-  handleInboundDestinationChange = (event) => {
-    this.setState({ inboundDestination: event.target.value });
-  }
-
-  handleDepartureDateChange = (event) => {
-    this.setState({ departureDate: event.target.value });
-  }
-
-  handleReturnDateChange = (event) => {
-    this.setState({ returnDate: event.target.value });
-  }
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const { numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate } = this.state;
-    const flightClient = new FlightClient();
-    flightClient.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
-      .then((flights) => {
-        console.log('API response:', flights);
-      })
-      .catch((error) => {
-      });
-  }
+    console.log("number of travellers" + numberOfTravellers)
+    console.log("outboundDestination" + outboundDestination)
+    console.log("inbdoundDestination" + inboundDestination)
+    console.log("departure Date" + departureDate)
+    console.log("return Date" + returnDate)
+  };
 
-  render() {
-    const { numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate } = this.state;
-    return (
+  return (
     <main class="content">
         <h3 class="panel__title">Find a Flight</h3>
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div class="form__row">
         <div class="form__input">
         <label>
           Outbound destination:
           </label>
-          <input className="form-control" type="text" value={outboundDestination} onChange={this.handleOutboundDestinationChange} />
+          <input className="form-control" type="text" value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)} />
         </div>
         </div>
         <br />
         <div class="form__row">
         <div class="form__input">
         <label>Inbound destination:</label>
-          <input className="form-control" type="text" value={inboundDestination} onChange={this.handleInboundDestinationChange} />
+          <input className="form-control" type="text" value={inboundDestination} onChange={(event) => setInboundDestination(event.target.value)} />
         </div>
         </div>
         <br />
         <div class="form__row">
         <div class="form__input">
         <label>Departure date:</label>
-          <input className="form-control" type="text" placeholder="YYYY-MM-DD" value={departureDate} onChange={this.handleDepartureDateChange} />
+          <input className="form-control" type="text" placeholder="YYYY-MM-DD" value={departureDate} onChange={(event) => setDepartureDate(event.target.value)} />
         </div>
         </div>
         <br />
         <div class="form__row">
         <div class="form__input">
         <label>Return date:</label>
-          <input className="form-control" type="text" placeholder="YYYY-MM-DD" value={returnDate} onChange={this.handleReturnDateChange} />
+          <input className="form-control" type="text" placeholder="YYYY-MM-DD" value={returnDate} onChange={(event) => setReturnDate(event.target.value)} />
         </div>
         </div>
         <br />
@@ -84,15 +66,14 @@ class FlightForm extends React.Component {
         <label>
         Number of travellers:
           </label>
-          <input className="form-control" type="text" value={numberOfTravellers} onChange={this.handleNumberOfTravellersChange} />
+          <input className="form-control" type="text" value={numberOfTravellers} onChange={(event) => setNumberofTravellers(event.target.value)} />
         </div>
         </div>
         <br />
         <button type="submit">Search flights</button>
       </form>
     </main>
-    );
-  }
-}
+  );
+};
 
 export default FlightForm;
