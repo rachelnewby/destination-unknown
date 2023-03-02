@@ -10,7 +10,6 @@ class FlightClient {
     return fetch(url, {headers})
       .then((response) => response.json())
       .then((flights) => {
-        console.log('Flights:', flights); // Add this line to log the flights response
         return flights.data.buckets[1]
       })
       .catch((error) => {return error})

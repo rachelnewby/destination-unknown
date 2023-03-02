@@ -14,7 +14,6 @@ describe('FlightForm', () => {
     cy.get('.form__row:nth-child(9) .form-control').click();
     cy.get('.form__row:nth-child(9) .form-control').type('1');
     cy.get('button').click();
-    cy.get('form').submit();
   })
 
   // it('console logs the correct information', () => {
