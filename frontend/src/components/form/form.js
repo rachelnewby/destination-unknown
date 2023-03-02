@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FlightClient from './flightClient';
+import PriceChart from '../priceChart/priceChart'
 import './form.css';
 
 function FlightForm() {
@@ -8,6 +9,7 @@ function FlightForm() {
   const [inboundDestination, setInboundDestination] = useState('');
   const [departureDate, setDepartureDate] = useState('');
   const [returnDate, setReturnDate] = useState('');
+  const [flights, setFlights] = useState([])
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,6 +17,7 @@ function FlightForm() {
     client.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
     .then((flights) => {
       console.log(`API response`, flights)
+      setFlights(flights)
     })
     .catch((err) => {return err})
     // console.log("number of travellers " + numberOfTravellers)
@@ -68,6 +71,7 @@ function FlightForm() {
         </div>
         <br />
         <button type="submit">Search flights</button>
+        <PriceChart chartData={flights}/>
       </form>
     </main>
   );
