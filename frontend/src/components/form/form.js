@@ -17,11 +17,22 @@ function FlightForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const url = `/?travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${inboundDestination}&departureDate=${departureDate}&returnDate=${returnDate}`;
-    fetch(url)
+    const url = `http://localhost:4000/?travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${inboundDestination}&departureDate=${departureDate}&returnDate=${returnDate}`;
+    console.log(url)
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(response => response.json())
-      .then(flights => {setFlights(flights)
+      .then(flights => {
+        console.log(flights);
+        setFlights(flights)
+        console.log('flights', flights)
       })
+      
       .catch(error => console.log(error))
   };
 
