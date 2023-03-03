@@ -61,7 +61,7 @@ function FlightForm() {
         <label>
           Outbound destination:
           </label>
-          <select>
+          <select value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)}>
             <option value="London-LHR">London Heathrow</option>
             <option value="Manchester-MAN">Manchester</option>
             <option value="Liverpool-LPL">Liverpool</option>
@@ -109,7 +109,7 @@ function FlightForm() {
         <br />
         <button type="submit">Search flights</button>
       </form>
-      {flights && <PriceChart chartData={flights} />}
+      {/* {flights && <PriceChart chartData={flights} />} */}
     </main>
   );
 };
