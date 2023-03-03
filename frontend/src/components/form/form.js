@@ -15,16 +15,17 @@ function FlightForm() {
     console.log('Flights updated:', flights);
   }, [flights]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const flightClient = new FlightClient();
-    flightClient.loadFlights(numberOfTravellers, outboundDestination, inboundDestination, departureDate, returnDate)
-      .then((flights) => {
-        setFlights(flights);
-        console.log(flights)
-      })
-      .catch((error) => {
-      });
+    let response = await fetch("/", {
+      method: "get",
+      body: JSON.stringify({travellers: numberOfTravellers, outbound: outboundDestination, 
+        inbound: inboundDestination, departureDate: departureDate, returnDate: returnDate})
+    })
+
+    if(response.status == 201){
+      setFlights(response)
+    }
   };
 
   return (
