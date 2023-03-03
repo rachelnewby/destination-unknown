@@ -15,23 +15,14 @@ function FlightForm() {
     console.log('Flights updated:', flights);
   }, [flights]);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    let response = await fetch("/", {
-      method: "GET",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        travellers: numberOfTravellers, 
-        outbound: outboundDestination, 
-        inbound: inboundDestination, 
-        departureDate: departureDate, 
-        returnDate: returnDate
+    const url = `/?travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${inboundDestination}&departureDate=${departureDate}&returnDate=${returnDate}`;
+    fetch(url)
+      .then(response => response.json())
+      .then(flights => {setFlights(flights)
       })
-    })    
-    const responseFlights = await response.json();
-    setFlights(responseFlights)
+      .catch(error => console.log(error))
   };
 
   return (
