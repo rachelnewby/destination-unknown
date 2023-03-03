@@ -6,6 +6,7 @@ class FlightClient {
     return fetch(url)
       .then((response) => response.json())
       .then((flights) => {
+        console.log('flight client', flights)
         return flights.data.buckets[1]
       })
       .catch((error) => {return error})
