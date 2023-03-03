@@ -36,14 +36,18 @@ function FlightForm() {
         <label>
           Outbound destination:
           </label>
-          <input className="form-control" type="text" value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)} />
+          <select>
+            
+          </select>
         </div>
         </div>
         <br />
         <div class="form__row">
         <div class="form__input">
         <label>Inbound destination:</label>
-          <input className="form-control" type="text" value={inboundDestination} onChange={(event) => setInboundDestination(event.target.value)} />
+        <select>
+
+        </select>
         </div>
         </div>
         <br />
