@@ -18,14 +18,20 @@ function FlightForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     let response = await fetch("/", {
-      method: "get",
-      body: JSON.stringify({travellers: numberOfTravellers, outbound: outboundDestination, 
-        inbound: inboundDestination, departureDate: departureDate, returnDate: returnDate})
-    })
-
-    if(response.status == 201){
-      setFlights(response)
-    }
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        travellers: numberOfTravellers, 
+        outbound: outboundDestination, 
+        inbound: inboundDestination, 
+        departureDate: departureDate, 
+        returnDate: returnDate
+      })
+    })    
+    const responseFlights = await response.json();
+    setFlights(responseFlights)
   };
 
   return (

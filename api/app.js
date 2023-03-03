@@ -1,10 +1,18 @@
 const express = require('express')
 const app = express()
-const router = app.router
-const client = require('./client/flightClient')
+const FlightClient = require('./client/flightClient')
 
-router.get('/', (req, res) => {
-  
+const flightClient = new FlightClient()
+
+app.get('/', (req, res) => {
+  const {travellers, 
+    outbound, 
+    inbound, 
+    departureDate, 
+    returnDate} = req.query
+
+  flights = flightClient.loadFlights(travellers, outbound, inbound, departureDate, returnDate)
+  res.json(flights)
 })
 
-app.listen(3000)
+app.listen(4000)
