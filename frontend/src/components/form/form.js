@@ -27,6 +27,31 @@ function FlightForm() {
       });
   };
 
+  const outboundOptions = [
+    "London Heatrow-LHR",
+    "Manchester-MAN",
+    "Liverpool-LPL",
+    "Cardiff-CWL",
+    "Bristol-BRS",
+    "Edinburgh-EDI",
+    "Dublin-DUB"
+  ]
+  const inboundOptions = [
+    "Paris-CDG",
+    "Bologna-BLQ",
+    "Rome-FCO",
+    "Split-SPU",
+    "Barcelona-BCN",
+    "Ibiza-IBZ",
+    "Lisbon-LIS",
+    "Porto-OPO",
+    "Copenhagen-CPH",
+    "Budapest-BUD",
+    "Prague-PRG",
+    "Athens-ASH",
+    "Krakow-KRK"
+  ]
+
   return (
     <main class="content">
         <h3 class="panel__title">Find a Flight</h3>
@@ -37,7 +62,13 @@ function FlightForm() {
           Outbound destination:
           </label>
           <select>
-            
+            <option value="London-LHR">London Heathrow</option>
+            <option value="Manchester-MAN">Manchester</option>
+            <option value="Liverpool-LPL">Liverpool</option>
+            <option value="Cardiff-CWL">Cardiff</option>
+            <option value="Bristol-BRS">Bristol</option>
+            <option value="Edinburgh-EDI">Edinburgh</option>
+            <option value="Dublin-DUB">Dublin</option>
           </select>
         </div>
         </div>
@@ -46,7 +77,9 @@ function FlightForm() {
         <div class="form__input">
         <label>Inbound destination:</label>
         <select>
-
+          <option value="Paris-CDG">Paris</option>
+          <option value="Bologna-BLQ">Bologna</option>
+          <option value="Rome-FCO">Rome</option>
         </select>
         </div>
         </div>
