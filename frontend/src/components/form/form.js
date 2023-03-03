@@ -29,7 +29,7 @@ function FlightForm() {
       .then(response => response.json())
       .then(flights => {
         console.log(flights);
-        setFlights(flights)
+        setFlights(flights.flights)
         console.log('flights', flights)
       })
       
