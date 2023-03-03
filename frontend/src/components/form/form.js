@@ -27,29 +27,28 @@ function FlightForm() {
       });
   };
 
-  const outboundOptions = [
-    "London Heatrow-LHR",
-    "Manchester-MAN",
-    "Liverpool-LPL",
-    "Cardiff-CWL",
-    "Bristol-BRS",
-    "Edinburgh-EDI",
-    "Dublin-DUB"
+  const inboundOption = [
+    {name: "Paris", code: "CDG"},
+    {name: "Bologna", code: "BLQ"},
+    {name: "Rome", code: "FCO"},
+    {name: "Split", code: "SPU"},
+    {name: "Barcelona", code: "BCN"},
+    {name: "Ibiza", code: "IBZ"},
+    {name: "Lisbon", code: "LIS"},
+    {name: "Porto", code: "OPO"},
+    {name: "Copenhagen", code: "CPH"},
+    {name: "Budapest", code: "BUD"},
+    {name: "Prague", code: "PRG"},
+    {name: "Athens", code: "ASH"},
+    {name: "Krakow", code: "KRK"}
   ]
-  const inboundOptions = [
-    "Paris-CDG",
-    "Bologna-BLQ",
-    "Rome-FCO",
-    "Split-SPU",
-    "Barcelona-BCN",
-    "Ibiza-IBZ",
-    "Lisbon-LIS",
-    "Porto-OPO",
-    "Copenhagen-CPH",
-    "Budapest-BUD",
-    "Prague-PRG",
-    "Athens-ASH",
-    "Krakow-KRK"
+  const outboundOption = [
+    {name: "London", code: "LHR"},
+    {name: "Manchester", code: "MAN"},
+    {name: "Cardiff", code: "CWL"},
+    {name: "Bristol", code: "BRS"},
+    {name: "Edinburgh", code: "EDI"},
+    {name: "Dublin", code: "DUB"}
   ]
 
   return (
@@ -61,14 +60,11 @@ function FlightForm() {
         <label>
           Outbound destination:
           </label>
-          <select value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)}>
-            <option value="London-LHR">London Heathrow</option>
-            <option value="Manchester-MAN">Manchester</option>
-            <option value="Liverpool-LPL">Liverpool</option>
-            <option value="Cardiff-CWL">Cardiff</option>
-            <option value="Bristol-BRS">Bristol</option>
-            <option value="Edinburgh-EDI">Edinburgh</option>
-            <option value="Dublin-DUB">Dublin</option>
+          <select className="form-control" value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)}>
+            <option value="">Select destination</option>
+            {outboundOption.map((option) => (
+              <option key={option.code} value={option.code}>{option.name}</option>
+            ))}
           </select>
         </div>
         </div>
@@ -76,11 +72,12 @@ function FlightForm() {
         <div class="form__row">
         <div class="form__input">
         <label>Inbound destination:</label>
-        <select>
-          <option value="Paris-CDG">Paris</option>
-          <option value="Bologna-BLQ">Bologna</option>
-          <option value="Rome-FCO">Rome</option>
-        </select>
+        <select className="form-control" value={inboundDestination} onChange={(event) => setInboundDestination(event.target.value)}>
+            <option value="">Select destination</option>
+            {inboundOption.map((option) => (
+              <option key={option.code} value={option.code}>{option.name}</option>
+            ))}
+          </select>
         </div>
         </div>
         <br />
@@ -109,7 +106,7 @@ function FlightForm() {
         <br />
         <button type="submit">Search flights</button>
       </form>
-      {/* {flights && <PriceChart chartData={flights} />} */}
+      {flights && <PriceChart chartData={flights} />}
     </main>
   );
 };
