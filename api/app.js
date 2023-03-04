@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
     console.log('app.js flights', flights);
     console.log('app.js cityData', cityData);
 
-    res.status(200).json({flights, city: cityData});
+    res.status(200).json({flights: flights, city: cityData});
   } catch (error) {
     console.error(error);
     res.status(500).json({error: 'Something went wrong'});
