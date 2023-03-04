@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import FlightClient from './flightClient';
 import './form.css';
 import PriceChart from '../priceChart/priceChart';
+import ErrorMessage from '../errorMessage/errorMessage';
 
 function FlightForm() {
   const [numberOfTravellers, setNumberofTravellers] = useState('');
@@ -10,6 +10,7 @@ function FlightForm() {
   const [departureDate, setDepartureDate] = useState('');
   const [returnDate, setReturnDate] = useState('');
   const [flights, setFlights] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     console.log('Flights updated:', flights);
@@ -26,14 +27,25 @@ function FlightForm() {
         'Content-Type': 'application/json'
       }
     })
-      .then(response => response.json())
-      .then(flights => {
-        console.log(flights);
-        setFlights(flights.flights)
-        console.log('flights', flights)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Sorry, an error has occured. Please try again.');
+        }
+        return response.json()
       })
-      
-      .catch(error => console.log(error))
+      .then(data => {
+        if (data && data.flights.items > 0) {
+          console.log(data);
+          setFlights(data.flights);
+          console.log('flights', data);
+        } else {
+          throw new Error('Sorry, there are no flights matching your request. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.log('Error:', error)
+        setError(`${error}`)
+      })
   };
 
   return (
@@ -82,6 +94,7 @@ function FlightForm() {
         <button type="submit">Search flights</button>
       </form>
       {flights && <PriceChart chartData={flights} />}
+      {error && <ErrorMessage error={error}/>}
     </main>
   );
 };
