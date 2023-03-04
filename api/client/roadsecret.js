@@ -1,3 +1,3 @@
-const roadSecret = '9534be2a29a76b4e4d7dd79eb00b382a'
+const roadSecret = '92cc093f7e3cc6774be30495f30b21d7'
 
 module.exports = roadSecret;

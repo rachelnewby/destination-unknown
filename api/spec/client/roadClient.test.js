@@ -8,7 +8,7 @@ describe('RoadgoatClient', () => {
     const client = new RoadgoatClient()
     fetch.mockResponseOnce(JSON.stringify(mockRoadResponse))
     const city = 'barcelona-spain';
-   client.loadCity(city).then((city) => {
+    client.loadCity(city).then((city) => {
     console.log('roadgoat client', mockRoadResponse.data)
     expect(city).toEqual(mockRoadResponse.data)
    })
