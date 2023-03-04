@@ -16,7 +16,7 @@ app.get('/', async (req, res) => {
 
   flights = await flightClient.loadFlights(travellers, outbound, inbound, departureDate, returnDate)
   console.log('app.js ', flights)
-  res.status(200).json({flights})
+  res.status(200).json({flights: flights})
 })
 
 app.listen(4000)
