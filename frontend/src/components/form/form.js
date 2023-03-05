@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import FlightClient from "./flightClient";
-import "./form.css";
-import PriceChart from "../priceChart/priceChart";
+import React, { useState, useEffect } from 'react';
+import './form.css';
+import PriceChart from '../priceChart/priceChart';
+import ErrorMessage from '../errorMessage/errorMessage';
 
 function FlightForm(clickFunction) {
   const [numberOfTravellers, setNumberofTravellers] = useState("");
@@ -10,6 +10,7 @@ function FlightForm(clickFunction) {
   const [departureDate, setDepartureDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
   const [flights, setFlights] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     console.log("Flights updated:", flights);
@@ -17,22 +18,34 @@ function FlightForm(clickFunction) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const flightClient = new FlightClient();
-    // flightClient
-    //   .loadFlights(
-    //     numberOfTravellers,
-    //     outboundDestination,
-    //     inboundDestination,
-    //     departureDate,
-    //     returnDate
-    //   )
-    //   .then((flights) => {
-    //     setFlights(flights);
-    //     console.log(flights);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    const url = `http://localhost:4000/?travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${inboundDestination}&departureDate=${departureDate}&returnDate=${returnDate}`;
+    console.log(url)
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Sorry, an error has occured. Please try again.');
+        }
+        return response.json()
+      })
+      .then(data => {
+        if (data && data.flights.items > 0) {
+          console.log(data);
+          setFlights(data.flights);
+          console.log('flights', data);
+        } else {
+          throw new Error('Sorry, there are no flights matching your request. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.log('Error:', error)
+        setError(`${error}`)
+      })
     console.log("search clicked");
     clickFunction.onButtonClick();
   };
@@ -108,6 +121,7 @@ function FlightForm(clickFunction) {
         </form>
       </div>
       {flights && <PriceChart chartData={flights} />}
+      {error && <ErrorMessage error={error}/>}
     </main>
   );
 }

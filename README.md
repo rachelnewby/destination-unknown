@@ -8,6 +8,10 @@ JavaScript
 Jest
 Cypress ru
 
+To run:
+Open a terminal and navigate into the 'api' folder. Run ```node app.js``` <br>
+In a seperate terminal, navigate into the 'frontend' folder. Run ```npm start build```
+
 # API
 
 This program uses the [FlightLabs API](https://www.goflightlabs.com/) <br>
