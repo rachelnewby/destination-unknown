@@ -26,7 +26,7 @@ function FlightForm(clickFunction) {
     const selectedInbound = inbound.find((option) => option.airportcode === inboundDestination);
     const url = `http://localhost:4000/?city=${selectedInbound.name}&travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${selectedInbound.airportcode}&departureDate=${departureDate}&returnDate=${returnDate}`;
     console.log(url);
-
+  
     fetch(url, {
       method: 'GET',
       headers: {
@@ -45,7 +45,8 @@ function FlightForm(clickFunction) {
         setFlights(data.flights);
         console.log('flights', data);
         setCity(data.city);
-        console.log('city', data.city);
+        console.log('city', data.city)
+        setError(null);
       } else {
         throw new Error('Sorry, there are no flights matching your request. Please try again.');
       }
@@ -54,6 +55,8 @@ function FlightForm(clickFunction) {
       console.log('Error:', error);
       setError(`${error}`);
     });
+    console.log("search clicked");
+    clickFunction.onButtonClick();
   }
     return (
       <main class="content">
