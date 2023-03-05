@@ -1,5 +1,19 @@
 .App {
   text-align: center;
+  display: flex; /* add flex display */
+  flex-wrap: wrap; /* allow for wrapping if necessary */
+  justify-content: center; /* center horizontally */
+}
+
+.FlightForm + .FlightForm {
+  margin-left: 40px; /* add a margin to the left of the second form */
+}
+
+.FlightForm {
+  width: calc(
+    50% - 10px
+  ); /* subtract half of the margin from each form's width */
+  box-sizing: border-box; /* include padding and borders in width */
 }
 
 .App-logo {
