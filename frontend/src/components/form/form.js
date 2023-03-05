@@ -33,23 +33,27 @@ function FlightForm(clickFunction) {
         'Content-Type': 'application/json'
       }
     })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Sorry, an error has occurred. Please try again.');
-        }
-        return response.json();
-      })
-      .then(data => {
-          console.log(data);
-          setFlights(data.flights);
-          console.log('flights', data);
-          setCity(data.city);
-          console.log('city', data.city)
-        })
-      .catch(error => {
-        console.log('Error:', error);
-        setError(`${error}`);
-      });
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Sorry, an error has occurred. Please try again.');
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.flights.items && data.flights.items.length > 0) {
+        console.log(data);
+        setFlights(data.flights);
+        console.log('flights', data);
+        setCity(data.city);
+        console.log('city', data.city);
+      } else {
+        throw new Error('Sorry, there are no flights matching your request. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.log('Error:', error);
+      setError(`${error}`);
+    });
   }
     return (
       <main class="content">
