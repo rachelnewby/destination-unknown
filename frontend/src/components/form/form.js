@@ -4,7 +4,7 @@ import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
 
 const inbound = [
-  { airportcode: 'MAD', name: 'madrid-spain' }
+  { airportcode: 'MAD', name: 'madrid-spain', place: 'Madrid' }
 ];
 
 function FlightForm() {
@@ -72,7 +72,7 @@ function FlightForm() {
           <select className="form-control" value={inboundDestination} onChange={(event) => setInboundDestination(event.target.value)}>
                 <option value="">Select destination</option>
                 {inbound.map((option) => (
-                  <option key={option.airportcode} value={option.airportcode}>{option.name}</option>
+                  <option key={option.airportcode} value={option.airportcode}>{option.place}</option>
                 ))}
               </select>
           </div>
