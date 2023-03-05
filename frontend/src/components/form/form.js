@@ -3,7 +3,7 @@ import './form.css';
 import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
 
-const outbound = [
+const inbound = [
   { airportcode: 'MAD', name: 'madrid-spain' }
 ];
 
@@ -23,8 +23,8 @@ function FlightForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const selectedOutbound = outbound.find((option) => option.airportcode === outboundDestination);
-    const url = `http://localhost:4000/?city=${selectedOutbound.name}&travellers=${numberOfTravellers}&outbound=${selectedOutbound.airportcode}&inbound=${inboundDestination}&departureDate=${departureDate}&returnDate=${returnDate}`;
+    const selectedInbound = inbound.find((option) => option.airportcode === inboundDestination);
+    const url = `http://localhost:4000/?city=${selectedInbound.name}&travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${selectedInbound.airportcode}&departureDate=${departureDate}&returnDate=${returnDate}`;
     console.log(url);
 
     fetch(url, {
@@ -57,20 +57,24 @@ function FlightForm() {
         <form onSubmit={handleSubmit}>
           <div class="form__row">
           <div class="form__input">
+          <div class="form__row">
+          <div class="form__input">
           <label>Outbound destination:</label>
-              <select className="form-control" value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)}>
-                <option value="">Select destination</option>
-                {outbound.map((option) => (
-                  <option key={option.airportcode} value={option.airportcode}>{option.name}</option>
-                ))}
-              </select>
+            <input className="form-control" type="text" value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)} />
+          </div>
+          </div>
           </div>
           </div>
           <br />
           <div class="form__row">
           <div class="form__input">
           <label>Inbound destination:</label>
-            <input className="form-control" type="text" value={inboundDestination} onChange={(event) => setInboundDestination(event.target.value)} />
+          <select className="form-control" value={inboundDestination} onChange={(event) => setInboundDestination(event.target.value)}>
+                <option value="">Select destination</option>
+                {inbound.map((option) => (
+                  <option key={option.airportcode} value={option.airportcode}>{option.name}</option>
+                ))}
+              </select>
           </div>
           </div>
           <br />
