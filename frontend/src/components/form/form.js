@@ -7,18 +7,18 @@ const inbound = [
   { airportcode: 'MAD', name: 'madrid-spain', place: 'Madrid' }
 ];
 
-function FlightForm() {
-  const [numberOfTravellers, setNumberofTravellers] = useState('');
-  const [outboundDestination, setOutboundDestination] = useState('');
-  const [inboundDestination, setInboundDestination] = useState('');
-  const [departureDate, setDepartureDate] = useState('');
-  const [returnDate, setReturnDate] = useState('');
+function FlightForm(clickFunction) {
+  const [numberOfTravellers, setNumberofTravellers] = useState("");
+  const [outboundDestination, setOutboundDestination] = useState("");
+  const [inboundDestination, setInboundDestination] = useState("");
+  const [departureDate, setDepartureDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
   const [flights, setFlights] = useState(null);
   const [city, setCity] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log('Flights updated:', flights);
+    console.log("Flights updated:", flights);
   }, [flights]);
 
   const handleSubmit = (event) => {
