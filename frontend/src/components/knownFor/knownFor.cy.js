@@ -1,5 +1,6 @@
 import mockRoadGoatData from "../roadGoatStatsChart/mockRoadGoatData";
 import KnownFor from "./knownFor.js";
+import mockRoadGoatDataEmptyKnownFor from "../roadGoatStatsChart/mockRoadGoatDataEmptyKnownFor";
 
 describe("KnownFor", () => {
   it("has a title for Known for", () => {
@@ -30,5 +31,11 @@ describe("KnownFor", () => {
       // Assert that the src attribute is a valid URL
       expect(src).to.match(/^http(s)?:\/\/\S+/);
     });
+  });
+
+  it("if city is not known for anything, message appears", () => {
+    cy.mount(<KnownFor goatData={mockRoadGoatDataEmptyKnownFor} />);
+    cy.get("#emoji-div").should("exist");
+    cy.get(".empty-knownfor").should("have.text", "Not known for anything");
   });
 });
