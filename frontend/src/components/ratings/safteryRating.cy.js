@@ -1,4 +1,4 @@
-import Ratings from "./budgetRatings";
+import Ratings from "./safetyRatings";
 import mockRoadGoatData from './mockRoadGoatData';
 
 describe("Ratings", () => {
