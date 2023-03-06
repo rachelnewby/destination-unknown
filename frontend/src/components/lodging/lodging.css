@@ -1,0 +1,30 @@
+.button-group {
+    display: inline-block;
+    text-align: center; /* center the button wrapper */
+    margin-bottom: 16px;
+  }
+  
+  .button-wrapper {
+    display: inline-block; /* display the button wrapper inline */
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    margin-bottom: 4px;
+  }
+  
+  .button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  
+  .title {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+    text-rendering: optimizeLegibility;
+  }
+  
