@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './form.css';
 import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
+import Lodging from '../lodging/lodging';
 
 
 const inbound = [
@@ -139,6 +140,7 @@ function FlightForm(clickFunction) {
         {flights && <PriceChart chartData={flights} />}
         {/* {city && <div> city data is that = {city}</div>} */}
         {error && <ErrorMessage error={error}/>}
+        {city && <Lodging cityData={city} />}
       </main>
     );
   };
