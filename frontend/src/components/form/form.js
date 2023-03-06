@@ -6,18 +6,19 @@ import ErrorMessage from '../errorMessage/errorMessage';
 
 const inbound = [
   {name: "paris-france", airportcode: "CDG", place: 'Paris'},
-  {name: "bologna-italy", aircodecode: "BLQ", place: 'Bologna'},
-  {name: "rome-italy", aircodecode: "FCO", place: 'Rome'},
-  {name: "barcelona-spain", code: "BCN", place: 'Barcelona'},
-  {name: "ibiza-spain", code: "IBZ", place: 'Ibiza'},
-  {name: "lisbon-portugal", code: "LIS", place: 'Lisbon'},
-  {name: "porto-portugal", code: "OPO", place: 'Porto'},
-  {name: "copenhagen-denmakr", code: "CPH", place: 'Copenhagen'},
-  {name: "budapest-hungary", code: "BUD", place: 'Budapest'},  
-  {name: "prague-czech-republic", code: "PRG", place: 'Prague'},
-  {name: "athens-greece", code: "ASH", place: 'Athens'},
-  {name: "krakow-poland", code: "KRK", place: 'Krakow'}
+  {name: "bologna-italy", airportcode: "BLQ", place: 'Bologna'},
+  {name: "rome-italy", airportcode: "FCO", place: 'Rome'},
+  {name: "barcelona-spain", airportcode: "BCN", place: 'Barcelona'},
+  {name: "ibiza-spain", airportcode: "IBZ", place: 'Ibiza'},
+  {name: "lisbon-portugal", airportcode: "LIS", place: 'Lisbon'},
+  {name: "porto-portugal", airportcode: "OPO", place: 'Porto'},
+  {name: "copenhagen-denmakr", airportcode: "CPH", place: 'Copenhagen'},
+  {name: "budapest-hungary", airportcode: "BUD", place: 'Budapest'},  
+  {name: "prague-czech-republic", airportcode: "PRG", place: 'Prague'},
+  {name: "athens-greece", airportcode: "ASH", place: 'Athens'},
+  {name: "krakow-poland", airportcode: "KRK", place: 'Krakow'}
 ]
+
 const outbound = [
   {place: "Heathrow", airportcode: "LHR"},
   {place: "Manchester", airportcode: "MAN"},
