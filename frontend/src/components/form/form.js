@@ -3,9 +3,29 @@ import './form.css';
 import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
 
+
 const inbound = [
-  { airportcode: 'MAD', name: 'madrid-spain', place: 'Madrid' }
-];
+  {name: "paris-france", airportcode: "CDG", place: 'Paris'},
+  {name: "bologna-italy", aircodecode: "BLQ", place: 'Bologna'},
+  {name: "rome-italy", aircodecode: "FCO", place: 'Rome'},
+  {name: "barcelona-spain", code: "BCN", place: 'Barcelona'},
+  {name: "ibiza-spain", code: "IBZ", place: 'Ibiza'},
+  {name: "lisbon-portugal", code: "LIS", place: 'Lisbon'},
+  {name: "porto-portugal", code: "OPO", place: 'Porto'},
+  {name: "copenhagen-denmakr", code: "CPH", place: 'Copenhagen'},
+  {name: "budapest-hungary", code: "BUD", place: 'Budapest'},  
+  {name: "prague-czech-republic", code: "PRG", place: 'Prague'},
+  {name: "athens-greece", code: "ASH", place: 'Athens'},
+  {name: "krakow-poland", code: "KRK", place: 'Krakow'}
+]
+const outbound = [
+  {place: "Heathrow", airportcode: "LHR"},
+  {place: "Manchester", airportcode: "MAN"},
+  {place: "Cardiff", airportcode: "CWL"},
+  {place: "Bristol", airportcode: "BRS"},
+  {place: "Edinburgh", airportcode: "EDI"},
+  {place: "Dublin", airportcode: "DUB"}
+]
 
 function FlightForm(clickFunction) {
   const [numberOfTravellers, setNumberofTravellers] = useState("");
@@ -67,7 +87,12 @@ function FlightForm(clickFunction) {
           <div class="form__row">
           <div class="form__input">
           <label>Outbound destination:</label>
-            <input className="form-control" type="text" value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)} />
+          <select className="form-control" value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)}>
+                <option value="">Select destination</option>
+                {outbound.map((option) => (
+                  <option key={option.airportcode} value={option.airportcode}>{option.place}</option>
+                ))}
+              </select>
           </div>
           </div>
           </div>
