@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import "./knownFor.css";
 
 const KnownFor = ({ goatData }) => {
   const emojiData = [];
@@ -12,17 +13,17 @@ const KnownFor = ({ goatData }) => {
     }
   });
 
-  emojiData.forEach((element) => {
-    console.log(element);
-  });
-
   return (
     <div>
       <h3 id="knownfor-title">KNOWN FOR</h3>
       <div id="emoji-div">
         {emojiData.map((element) => (
-          <span>
-            <img src={element.emoji} alt={element.description} />
+          <span className="emoji-block">
+            <img
+              className="emoji-image"
+              src={element.emoji}
+              alt={element.description}
+            />
             <p id={element.description}>{element.description}</p>
           </span>
         ))}
