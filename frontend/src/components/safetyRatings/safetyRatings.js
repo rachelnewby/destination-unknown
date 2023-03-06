@@ -1,6 +1,6 @@
 import React from 'react';
 import Rating from 'react-rating';
-import './ratings.css';
+import '../ratings/ratings.css';
 
 function SafetyRatings( { cityData } ) {
   const cityName = cityData.data.attributes.name;
@@ -25,14 +25,17 @@ function SafetyRatings( { cityData } ) {
             width={40}
             height={40}
             alt=""
+            style={{ marginRight: '2px' }}
           />
         }
         emptySymbol={
           <img
-            src={'/emptySafetyIcon.png'}
+            src={'/emptyIcon.png'}
+            className='safety-empty'
             width={40}
             height={40}
             alt=""
+            style={{ marginRight: '2px' }}
           />
         }
       />

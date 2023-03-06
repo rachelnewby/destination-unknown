@@ -13,6 +13,7 @@ function BudgetRatings( { cityData } ) {
     <div className="ratings-div">
       <h3>Budget rating based on daily cost of lodging, food, and expenditure</h3>
       <p>The budget you need for {cityName} is {text.toLowerCase()}!</p>
+      <p>{subText}!</p>
       <div >
         <Rating
           start={0}
@@ -27,6 +28,7 @@ function BudgetRatings( { cityData } ) {
               width={40}
               height={40}
               alt=""
+              style={{ marginRight: '2px' }}
             />
           }
           emptySymbol={
@@ -35,11 +37,11 @@ function BudgetRatings( { cityData } ) {
               width={40}
               height={40}
               alt=""
+              style={{ marginRight: '2px' }}
             />
           }
         />
       </div>
-      <p>{subText}!</p>
     </div>
   );
 }
