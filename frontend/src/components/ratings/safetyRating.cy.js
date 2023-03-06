@@ -1,9 +1,11 @@
-import Ratings from "./safetyRatings";
+import SafetyRatings from "./safetyRatings";
 import mockRoadGoatData from './mockRoadGoatData';
 
-describe("Ratings", () => {
+describe("BudgetRatings", () => {
   it("returns the city name", () => {
-    cy.mount(<Ratings cityData={mockRoadGoatData}/>)
+    cy.mount(<SafetyRatings cityData={mockRoadGoatData}/>)
     cy.get('.ratings-div').should('exist')
+    cy.get('img').should('be.visible')
+    cy.wait(1000) 
   })
 })

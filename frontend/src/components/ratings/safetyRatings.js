@@ -1,17 +1,44 @@
 import React from 'react';
+import Rating from 'react-rating';
+import './ratings.css';
 
-function Ratings( { cityData } ) {
+function SafetyRatings( { cityData } ) {
   const cityName = cityData.data.attributes.name;
   const safety = cityData.data.attributes.safety[`${cityName}`].value;
   const subText = cityData.data.attributes.safety[`${cityName}`].subText;
+  const text = cityData.data.attributes.safety[`${cityName}`].text;
 
   return (
     <div className="ratings-div">
-      <p>City name is: {cityName}</p>
-      <p>Safety is: {safety}</p>
-      <p>Subetext is: {subText}</p>
-    </div>
+      <h3>Safety rating based on local crime and geo-political risk</h3>
+      <p>The safety rating is {text.toLowerCase()}, you should {subText.toLowerCase()}!</p>
+      <Rating
+        start={0}
+        stop={5}
+        step={1}
+        readonly={true}
+        initialRating={safety}
+        fullSymbol={
+          <img
+            src={'/safetyIcon.png'}
+            className='safety-full'
+            width={40}
+            height={40}
+            alt=""
+          />
+        }
+        emptySymbol={
+          <img
+            src={'/emptySafetyIcon.png'}
+            width={40}
+            height={40}
+            alt=""
+          />
+        }
+      />
+  </div>
+    
   )
 }
 
-export default Ratings; 
+export default SafetyRatings; 

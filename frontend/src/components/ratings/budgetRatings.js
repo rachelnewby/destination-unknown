@@ -3,7 +3,7 @@ import Rating from 'react-rating';
 import './ratings.css';
 
 
-function Ratings( { cityData } ) {
+function BudgetRatings( { cityData } ) {
   const cityName = cityData.data.attributes.name;
   const budget = cityData.data.attributes.budget[`${cityName}`].value;
   const subText = cityData.data.attributes.budget[`${cityName}`].subText;
@@ -11,7 +11,8 @@ function Ratings( { cityData } ) {
 
   return (
     <div className="ratings-div">
-      <p>Budget you need for {cityName} is {text.toLowerCase()}!</p>
+      <h3>Budget rating based on daily cost of lodging, food, and expenditure</h3>
+      <p>The budget you need for {cityName} is {text.toLowerCase()}!</p>
       <div >
         <Rating
           start={0}
@@ -38,9 +39,9 @@ function Ratings( { cityData } ) {
           }
         />
       </div>
-      <p>{subText}</p>
+      <p>{subText}!</p>
     </div>
   );
 }
 
-export default Ratings; 
+export default BudgetRatings; 
