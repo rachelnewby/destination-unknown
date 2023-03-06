@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const KnownFor = ({ goatData }) => {
-  // console.log(goatData.included[2]);
   const emojiData = [];
 
   goatData.included.forEach((element) => {
@@ -17,16 +16,17 @@ const KnownFor = ({ goatData }) => {
     console.log(element);
   });
 
-  // while type is === 'known_for
-  // get name and icon url
-  // each icon url need "-48.png" added to the end
-  // add to array of objects
-  // iterate over and pass values into span
-
   return (
     <div>
       <h3 id="knownfor-title">KNOWN FOR</h3>
-      <div id="emoji-div"></div>
+      <div id="emoji-div">
+        {emojiData.map((element) => (
+          <span>
+            <img src={element.emoji} alt={element.description} />
+            <p id={element.description}>{element.description}</p>
+          </span>
+        ))}
+      </div>
     </div>
   );
 };
