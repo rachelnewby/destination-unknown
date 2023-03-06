@@ -6,7 +6,7 @@ describe("Recommendations component", () => {
     cy.mount(<Recommendations cityData={mockRoadGoatData}/>)
     cy.get('button').should('exist');
   })
-  it('should render two buttons', () => {
+  it('should render four buttons', () => {
     cy.mount(<Recommendations cityData={mockRoadGoatData}/>)
     cy.get('button').should('have.length', 4)
   })
