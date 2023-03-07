@@ -1,0 +1,19 @@
+.budget-icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.budget-full {
+  background-color: goldenrod;
+  border-radius: 100%;
+}
+
+.safety-full {
+  background-color: rgba(0, 255, 0, 0.50);
+  border-radius: 50%;
+}
+
+.safety-empty {
+  border-radius: 50%;
+}

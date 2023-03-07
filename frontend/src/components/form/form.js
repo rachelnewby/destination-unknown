@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './form.css';
 import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
+import BudgetRatings from '../ratings/budgetRatings';
+import SafetyRatings from '../ratings/safetyRatings';
 import Lodging from '../lodging/lodging';
 import Recommendations from '../recommendations/recommendations';
 
@@ -140,6 +142,8 @@ function FlightForm(clickFunction) {
         {flights && <PriceChart chartData={flights} />}
         {city && <Recommendations cityData={city} />}
         {error && <ErrorMessage error={error}/>}
+        {city && <BudgetRatings cityData={city} />}
+        {city && <SafetyRatings cityData={city} />}
         {city && <Lodging cityData={city} />}
       </main>
     );
