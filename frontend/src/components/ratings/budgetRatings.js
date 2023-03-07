@@ -5,6 +5,15 @@ import './ratings.css';
 
 function BudgetRatings( { cityData } ) {
   const cityName = cityData.data.attributes.name;
+
+  if (!cityData.data.attributes.budget[`${cityName}`]) {
+    return (
+      <div className="error-message">
+        No budget rating data available for this city.
+      </div>
+    )
+  }
+
   const budget = cityData.data.attributes.budget[`${cityName}`].value;
   const subText = cityData.data.attributes.budget[`${cityName}`].subText;
   const text = cityData.data.attributes.budget[`${cityName}`].text;
