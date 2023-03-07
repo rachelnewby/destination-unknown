@@ -11,7 +11,7 @@ const inbound = [
   { name: "ibiza-spain", airportcode: "IBZ", place: "Ibiza" },
   { name: "lisbon-portugal", airportcode: "LIS", place: "Lisbon" },
   { name: "porto-portugal", airportcode: "OPO", place: "Porto" },
-  { name: "copenhagen-denmakr", airportcode: "CPH", place: "Copenhagen" },
+  { name: "copenhagen-denmark", airportcode: "CPH", place: "Copenhagen" },
   { name: "budapest-hungary", airportcode: "BUD", place: "Budapest" },
   { name: "prague-czech-republic", airportcode: "PRG", place: "Prague" },
   { name: "athens-greece", airportcode: "ASH", place: "Athens" },
