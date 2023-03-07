@@ -6,6 +6,9 @@ import BudgetRatings from '../ratings/budgetRatings';
 import SafetyRatings from '../safetyRatings/safetyRatings';
 import Lodging from '../lodging/lodging';
 import Recommendations from '../recommendations/recommendations';
+import Cases from '../covidCases/covidCases';
+import Image from '../image/image';
+import KnownFor from '../knownFor/knownFor';
 
 const inbound = [
   {name: "paris-france", airportcode: "CDG", place: 'Paris'},
@@ -171,11 +174,14 @@ function FlightForm() {
           <button type="submit">Search flights</button>
         </form>
         {flights && <PriceChart chartData={flights} />}
-        {city && <Recommendations cityData={city} />}
         {error && <ErrorMessage error={error}/>}
         {city && <BudgetRatings cityData={city} />}
         {city && <SafetyRatings cityData={city} />}
+        {city && <KnownFor goatData={city} />}
+        {city && <Recommendations cityData={city} />}
         {city && <Lodging cityData={city} />}
+        {city && <Cases cityData={city} />}
+        {city && <Image goatData={city} />}
       </main>
     );
   };
