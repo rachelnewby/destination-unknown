@@ -2,7 +2,6 @@ import React from 'react';
 import Rating from 'react-rating';
 import './ratings.css';
 
-
 function BudgetRatings( { cityData } ) {
   const cityName = cityData.data.attributes.name;
 
@@ -20,10 +19,11 @@ function BudgetRatings( { cityData } ) {
 
   return (
     <div className="ratings-div">
-      <h3>Budget rating based on daily cost of lodging, food, and expenditure</h3>
-      <p>The budget you need for {cityName} is {text.toLowerCase()}!</p>
-      <p>{subText}!</p>
-      <div >
+      <div className="budget-container">
+        <h4 className="budget-heading">Budget:
+          <span className="budget-hover-text">
+                  The budget you need for {cityName} is {text.toLowerCase()}!</span>
+        </h4>
         <Rating
           start={0}
           stop={8}
@@ -34,19 +34,19 @@ function BudgetRatings( { cityData } ) {
             <img
               src={'/budgetIcon.png'}
               className='budget-full'
-              width={40}
-              height={40}
+              width={20}
+              height={20}
               alt=""
-              style={{ marginRight: '2px' }}
+              style={{ marginRight: '1px' }}
             />
           }
           emptySymbol={
             <img
               src={'/emptyIcon.png'}
-              width={40}
-              height={40}
+              width={20}
+              height={20}
               alt=""
-              style={{ marginRight: '2px' }}
+              style={{ marginRight: '1px' }}
             />
           }
         />
@@ -55,4 +55,4 @@ function BudgetRatings( { cityData } ) {
   );
 }
 
-export default BudgetRatings; 
+export default BudgetRatings;

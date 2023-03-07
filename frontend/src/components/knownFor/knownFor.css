@@ -12,11 +12,11 @@ body {
   justify-content: space-between;
   border: 5px solid grey;
   border-radius: 15px;
-  padding: 10px;
+  padding: 2px;
 }
 
 .emoji-block {
-  width: 33.33%;
+  width: 33.3%;
   display: flex;
   flex-direction: column;
   align-items: center;

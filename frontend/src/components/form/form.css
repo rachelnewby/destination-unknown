@@ -1,114 +1,112 @@
-:root {
-  --bg: hsl(210, 15%, 15%);
-  --fg: hsl(30, 5%, 85%);
-  --ac: hsl(160, 80%, 65%);
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  min-height: 100vh;
-  background-color: var(--bg);
-}
-
-.top-nav {
+.form {
   display: flex;
-  padding-inline: 2em;
-  align-items: center;
-}
-
-.logo {
-  margin-right: auto;
-}
-
-.logo__link {
-  color: var(--ac);
-}
-
-.nav__list {
-  list-style: none;
-  display: flex;
-}
-
-.nav__item:last-child {
-  margin-left: 4em;
-}
-
-.nav__link {
-  display: block;
-  color: var(--fg);
-  padding: 1em 1em;
-}
-
-.nav__link:hover {
-  background-color: var(--fg);
-  color: var(--bg);
-}
-
-.content {
-  min-height: 80vh;
-  display: grid;
-
-  place-content: center;
-  color: var(--fg);
-}
-
-.panel {
-  background-color: hsl(210, 10%, 10%);
-  padding: 2em;
-  border-radius: 0.5em;
-}
-
-.panel__title {
-  margin-bottom: 1em;
+  flex-direction: row;
+  gap: 1em;
 }
 
 .form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1em;
 }
 
 .form__row {
   display: flex;
-  max-width: 30em;
-  gap: 1.5em;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.form__input {
+.form__input > * {
+  flex: 1 1 auto;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.form__input input,
+.form__input select {
+  width: 100px; /* or any other width you prefer */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  border: 1px solid black;
+}
+
+.box3 {
+  grid-column: 1;
+  grid-row: 2;
+  height: 200px;
+  width: 250px;
+  border: 1px solid black;
+  margin-left: 50px;
+}
+.cases {
   display: flex;
   flex-direction: column;
-  flex: 1 1 33%;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 80px;
+}
+.recommendations {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  weight: 10px;
+  width: 100px;
+  margin-left: 600px;
+}
+.budgetratings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  weight: 50px;
+  width: 80px;
+}
+.safetyratings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  weight: 50px;
+  width: 80px;
 }
 
-input,
-select,
-button {
-  background: var(--fg);
-  color: var(--bg);
-  border: none;
-  border-radius: 0.2em;
-  padding: 0.5em 1em;
+.lodging {
+  grid-column: 2;
+  grid-row: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  weight: 100px;
+  width: 100px;
+  margin-bottom: 10px;
+  margin-left: 600px;
 }
 
-input[type="number"] {
-  width: 100%;
+.PriceChart {
+  grid-column: 2;
+  grid-row: 2;
+  margin-right: 10px;
 }
-
-.btn {
-  cursor: pointer;
-}
-
-#second-location-form {
-  margin-left: 20px;
+.KnownFor {
+  grid-column: 1;
+  grid-row: 2;
+  height: 300px;
+  weight: 200px;
+  width: 300px;
+  margin-top: 200px;
+  margin-left: 30px;
 }
