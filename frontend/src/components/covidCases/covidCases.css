@@ -1,14 +1,15 @@
 .covid-container {
   display: flex;
   align-items: center;
+  margin-left: 7px;
 }
 
 .covid-text {
-  color: hsl(30, 5%, 85%);
+  color: black;
   font-weight: bold;
   margin-right: 5px;
   font-family: "Trebuchet MS", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   text-rendering: optimizeLegibility;
 }
 
@@ -18,7 +19,7 @@
   border-radius: 50%;
   display: inline-block;
   margin-bottom: 1px;
-  border: 1px solid hsl(30, 5%, 85%);
+  border: 1px solid black;
 }
 
 .circle.low {
@@ -46,9 +47,9 @@
 .high,
 .extreme,
 .critical {
-  color: hsl(30, 5%, 85%);
+  color: black(30, 5%, 85%);
   font-family: "Trebuchet MS", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   text-rendering: optimizeLegibility;
 }
 
