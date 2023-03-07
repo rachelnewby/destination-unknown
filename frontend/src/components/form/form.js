@@ -160,9 +160,15 @@ function FlightForm() {
                 {city && <Lodging cityData={city} />}
             </div>
             <div className="box3">
-              {city && <Cases cityData={city} />}
-              {city && <BudgetRatings cityData={city} />}
-              {city && <SafetyRatings cityData={city} />}
+              <div className="Cases">
+                {city && <Cases cityData={city} />}
+              </div>
+              <div className="budgetrating">
+                {city && <BudgetRatings cityData={city} />}
+              </div>
+              <div className="safetyrating">
+                {city && <SafetyRatings cityData={city} />}
+              </div>
             </div>
             
           </div>
