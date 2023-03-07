@@ -1,6 +1,7 @@
 .safety-container {
   display: flex;
   align-items: center;
+  margin-right: 70px;
 }
 
 .safety-heading {

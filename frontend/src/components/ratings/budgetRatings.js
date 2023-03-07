@@ -26,8 +26,8 @@ function BudgetRatings( { cityData } ) {
             <img
               src={'/budgetIcon.png'}
               className='budget-full'
-              width={30}
-              height={30}
+              width={20}
+              height={20}
               alt=""
               style={{ marginRight: '1px' }}
             />
@@ -35,8 +35,8 @@ function BudgetRatings( { cityData } ) {
           emptySymbol={
             <img
               src={'/emptyIcon.png'}
-              width={30}
-              height={30}
+              width={20}
+              height={20}
               alt=""
               style={{ marginRight: '1px' }}
             />

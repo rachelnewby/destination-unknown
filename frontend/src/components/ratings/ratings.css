@@ -1,25 +1,15 @@
-.budget-icon {
-  background-color: white;
-  border-radius: 50%;
-  padding: 2px;
-}
-
-.budget-full {
-  background-color: goldenrod;
-  border-radius: 100%;
-}
 .budget-container {
   display: flex;
   align-items: center;
 }
 
-.safety-heading {
+.budget-heading {
   margin-right: 5px;
   margin-top: 17.5px;
 }
 
 .budget-rating-text {
-  text-align: left;
+  text-align: centeral;
 }
 
 .ratings-div {
@@ -48,4 +38,15 @@
   font-size: 12px;
   text-align: center;
   margin-top: 5px;
+}
+
+.budget-empty {
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.budget-full {
+  background-color: goldenrod;
+  border-radius: 100%;
 }
