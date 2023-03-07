@@ -151,7 +151,15 @@ function FlightForm() {
         </form>
         </div>
         <div className="container">
-              {flights && <PriceChart chartData={flights} />}
+              <div className="Image">
+                {city && <Image goatData={city} />}
+              </div>
+              <div className="KnownFor">
+                {city && <KnownFor goatData={city} />}
+              </div>
+              <div className="PriceChart">
+                {flights && <PriceChart chartData={flights} />}
+              </div>
               {error && <ErrorMessage error={error}/>}
               <div className="recommendations">
                 {city && <Recommendations cityData={city} />}
@@ -169,6 +177,7 @@ function FlightForm() {
               <div className="safetyrating">
                 {city && <SafetyRatings cityData={city} />}
               </div>
+              
             </div>
             
           </div>
