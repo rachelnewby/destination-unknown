@@ -3,7 +3,7 @@ import './form.css';
 import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
 import Lodging from '../lodging/lodging';
-
+import Recommendations from '../recommendations/recommendations';
 
 const inbound = [
   {name: "paris-france", airportcode: "CDG", place: 'Paris'},
@@ -13,7 +13,7 @@ const inbound = [
   {name: "ibiza-spain", airportcode: "IBZ", place: 'Ibiza'},
   {name: "lisbon-portugal", airportcode: "LIS", place: 'Lisbon'},
   {name: "porto-portugal", airportcode: "OPO", place: 'Porto'},
-  {name: "copenhagen-denmakr", airportcode: "CPH", place: 'Copenhagen'},
+  {name: "copenhagen-denmark", airportcode: "CPH", place: 'Copenhagen'},
   {name: "budapest-hungary", airportcode: "BUD", place: 'Budapest'},  
   {name: "prague-czech-republic", airportcode: "PRG", place: 'Prague'},
   {name: "athens-greece", airportcode: "ASH", place: 'Athens'},
@@ -138,11 +138,12 @@ function FlightForm(clickFunction) {
           <button type="submit">Search flights</button>
         </form>
         {flights && <PriceChart chartData={flights} />}
-        {/* {city && <div> city data is that = {city}</div>} */}
+        {city && <Recommendations cityData={city} />}
         {error && <ErrorMessage error={error}/>}
         {city && <Lodging cityData={city} />}
       </main>
     );
   };
+
 
   export default FlightForm;
