@@ -9,6 +9,7 @@ import Recommendations from '../recommendations/recommendations';
 import Cases from '../covidCases/covidCases';
 import Image from '../image/image';
 import KnownFor from '../knownFor/knownFor';
+import FlightPriceChart from '../flightPriceChart/flightPriceChart';
 
 const inbound = [
   {name: "paris-france", airportcode: "CDG", place: 'Paris'},
