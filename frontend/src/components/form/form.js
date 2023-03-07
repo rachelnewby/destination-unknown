@@ -3,7 +3,7 @@ import './form.css';
 import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
 import BudgetRatings from '../ratings/budgetRatings';
-import SafetyRatings from '../ratings/safetyRatings';
+import SafetyRatings from '../safetyRatings/safetyRatings';
 import Lodging from '../lodging/lodging';
 import Recommendations from '../recommendations/recommendations';
 
@@ -166,6 +166,7 @@ function FlightForm() {
               onChange={(event) => setNumberofTravellers(event.target.value)}
             />
           </div>
+        </div>
           <br />
           <button type="submit">Search flights</button>
         </form>
