@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './form.css';
 import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
+import Recommendations from '../recommendations/recommendations';
 
 
 const inbound = [
@@ -137,10 +138,11 @@ function FlightForm(clickFunction) {
           <button type="submit">Search flights</button>
         </form>
         {flights && <PriceChart chartData={flights} />}
-        {/* {city && <div> city data is that = {city}</div>} */}
+        {city && <Recommendations cityData={city} />}
         {error && <ErrorMessage error={error}/>}
       </main>
     );
   };
+
 
   export default FlightForm;
