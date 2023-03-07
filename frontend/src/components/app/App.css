@@ -1,12 +1,16 @@
 .App {
-  text-align: center;
-  display: flex; /* add flex display */
-  flex-wrap: wrap; /* allow for wrapping if necessary */
+  display: flex;
+  flex-direction: row; /* change to horizontal layout */
   justify-content: center; /* center horizontally */
+  align-items: flex-start; /* align to top */
 }
 
 .button-label {
   color: white;
+  position: absolute; /* position the label */
+  top: 0;
+  left: 50%; /* center horizontally */
+  transform: translateX(-50%); /* center horizontally */
 }
 
 .FlightForm + .FlightForm {
@@ -14,10 +18,7 @@
 }
 
 .FlightForm {
-  width: calc(
-    50% - 10px
-  ); /* subtract half of the margin from each form's width */
-  box-sizing: border-box; /* include padding and borders in width */
+  margin-left: 40px; /* add margin between the forms */
 }
 
 .App-logo {

@@ -27,7 +27,7 @@ function App() {
         <label className="button-label" htmlFor="second-city-select">
           Add Second City
         </label>
-        <FlightForm />
+        <FlightForm className="flightForm" id="firstCity" />
       </div>
     );
   } else {
@@ -39,8 +39,8 @@ function App() {
           onChange={handleButtonClickFalse}
           icons={false}
         />
-        <FlightForm id="firstCity" />
-        <FlightForm id="secondCity" />
+        <FlightForm className="flightForm" id="firstCity" />
+        <FlightForm className="flightForm" id="secondCity" />
         <label className="button-label" htmlFor="second-city-select">
           Remove Second City
         </label>
