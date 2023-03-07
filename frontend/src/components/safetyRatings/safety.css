@@ -1,14 +1,4 @@
-.budget-icon {
-  background-color: white;
-  border-radius: 50%;
-  padding: 2px;
-}
-
-.budget-full {
-  background-color: goldenrod;
-  border-radius: 100%;
-}
-.budget-container {
+.safety-container {
   display: flex;
   align-items: center;
 }
@@ -18,7 +8,7 @@
   margin-top: 17.5px;
 }
 
-.budget-rating-text {
+.safety-rating-text {
   text-align: left;
 }
 
@@ -30,7 +20,7 @@
   position: relative; /* Add this to make the child elements position relative to this container */
 }
 
-.budget-hover-text {
+.safety-hover-text {
   position: absolute;
   top: 75%;
   left: 50%;
@@ -40,12 +30,25 @@
   box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
 }
 
-.ratings-div:hover .budget-hover-text {
+.ratings-div:hover .safety-hover-text {
   display: block;
 }
 
-.budget-rating-text {
+.safety-rating-text {
   font-size: 12px;
   text-align: center;
   margin-top: 5px;
+}
+
+.safety-full {
+  background-color: rgba(0, 255, 0, 0.50);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.safety-empty {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }

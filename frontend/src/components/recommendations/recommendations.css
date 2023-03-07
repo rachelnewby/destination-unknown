@@ -12,7 +12,7 @@
   .button {
     display: flex;
     align-items: center;
-    width: 120px;
+    width: 100px;
     margin-bottom: 4px;
     border: 1px solid gray; /* set the initial border */
     border-radius: 4px; /* add rounded corners */
@@ -24,14 +24,14 @@
   }
   
   .button img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
   }
   
   .title {
     font-family: "Trebuchet MS", sans-serif;
-    font-size: 24px;
+    font-size: 14px;
     margin-bottom: 8px;
     text-rendering: optimizeLegibility;
   }
