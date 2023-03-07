@@ -28,7 +28,7 @@ The chart:
 
 The loading wheel
 
-`npm install react-promise-tracker --save`
+`npm i react-loading`
 
 # Authors
 
