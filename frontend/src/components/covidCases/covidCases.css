@@ -1,0 +1,76 @@
+.covid-container {
+  display: flex;
+  align-items: center;
+}
+
+.covid-text {
+  color: hsl(30, 5%, 85%);
+  font-weight: bold;
+  margin-right: 5px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 24px;
+  text-rendering: optimizeLegibility;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 1px;
+  border: 1px solid hsl(30, 5%, 85%);
+}
+
+.circle.low {
+  background-color: green;
+}
+
+.circle.medium {
+  background-color: rgb(255, 196, 86);
+}
+
+.circle.high {
+  background-color: orange;
+}
+
+.circle.critical {
+  background-color: red;
+}
+
+.circle.extreme {
+  background-color: darkred;
+}
+
+.low,
+.medium,
+.high,
+.extreme,
+.critical {
+  color: hsl(30, 5%, 85%);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 24px;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tooltip */
+.covid-container h1 span[title] {
+  position: relative;
+}
+
+.covid-container h1 span[title]::before {
+  content: attr(title);
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  padding: 1px 2px; /* smaller padding */
+  background-color: hsl(210, 15%, 15%);
+  color: #fff;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.covid-container h1 span[title]:hover::before {
+  display: block;
+}
