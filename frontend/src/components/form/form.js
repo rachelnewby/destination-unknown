@@ -3,9 +3,12 @@ import './form.css';
 import PriceChart from '../priceChart/priceChart';
 import ErrorMessage from '../errorMessage/errorMessage';
 import BudgetRatings from '../ratings/budgetRatings';
-import SafetyRatings from '../ratings/safetyRatings';
+import SafetyRatings from '../safetyRatings/safetyRatings';
 import Lodging from '../lodging/lodging';
 import Recommendations from '../recommendations/recommendations';
+import Cases from '../covidCases/covidCases';
+import Image from '../image/image';
+import KnownFor from '../knownFor/knownFor';
 
 const inbound = [
   {name: "paris-france", airportcode: "CDG", place: 'Paris'},
@@ -31,6 +34,7 @@ const outbound = [
   { place: "Dublin", airportcode: "DUB" },
 ];
 
+
 function FlightForm() {
   const [numberOfTravellers, setNumberofTravellers] = useState("");
   const [outboundDestination, setOutboundDestination] = useState("");
@@ -40,6 +44,8 @@ function FlightForm() {
   const [flights, setFlights] = useState(null);
   const [city, setCity] = useState(null);
   const [error, setError] = useState(null);
+  const formattedDepartureDate = `${departureDate.split('/').reverse().join('-')}`;
+  const formattedReturnDate = `${returnDate.split('/').reverse().join('-')}`;
 
   useEffect(() => {
     console.log("Flights updated:", flights);
@@ -50,7 +56,7 @@ function FlightForm() {
     const selectedInbound = inbound.find(
       (option) => option.airportcode === inboundDestination
     );
-    const url = `http://localhost:4000/?city=${selectedInbound.name}&travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${selectedInbound.airportcode}&departureDate=${departureDate}&returnDate=${returnDate}`;
+    const url = `http://localhost:4000/?city=${selectedInbound.name}&travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${selectedInbound.airportcode}&departureDate=${formattedDepartureDate}&returnDate=${formattedReturnDate}`;
     console.log(url);
 
     fetch(url, {
@@ -135,8 +141,7 @@ function FlightForm() {
             <label>Departure date:</label>
             <input
               className="form-control"
-              type="text"
-              placeholder="YYYY-MM-DD"
+              type="date"
               value={departureDate}
               onChange={(event) => setDepartureDate(event.target.value)}
             />
@@ -148,8 +153,7 @@ function FlightForm() {
             <label>Return date:</label>
             <input
               className="form-control"
-              type="text"
-              placeholder="YYYY-MM-DD"
+              type="date"
               value={returnDate}
               onChange={(event) => setReturnDate(event.target.value)}
             />
@@ -166,15 +170,19 @@ function FlightForm() {
               onChange={(event) => setNumberofTravellers(event.target.value)}
             />
           </div>
+        </div>
           <br />
           <button type="submit">Search flights</button>
         </form>
         {flights && <PriceChart chartData={flights} />}
-        {city && <Recommendations cityData={city} />}
         {error && <ErrorMessage error={error}/>}
         {city && <BudgetRatings cityData={city} />}
         {city && <SafetyRatings cityData={city} />}
+        {city && <KnownFor goatData={city} />}
+        {city && <Recommendations cityData={city} />}
         {city && <Lodging cityData={city} />}
+        {city && <Cases cityData={city} />}
+        {city && <Image goatData={city} />}
       </main>
     );
   };

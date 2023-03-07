@@ -25,10 +25,10 @@
               <button type="button" onClick={() => handleClick(guide)} className="button">
               <img src="/getyourguide.svg" alt="Get your guide icon" /> Guides
               </button>
-              <button type="button" onClick={() => handleClick(gevents)} className="button">
+              <button type="button" onClick={() => handleClick(cars)} className="button">
               <img src="/kayak.png" alt="Kayak icon" /> Kayak
               </button>
-              <button type="button" onClick={() => handleClick(cars)} className="button">
+              <button type="button" onClick={() => handleClick(gevents)} className="button">
               <img src="/google.png" alt="Google icon" /> Events
               </button>
               <button type="button" onClick={() => handleClick(hikes)} className="button">

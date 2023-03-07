@@ -11,6 +11,8 @@ const Image = ({ goatData }) => {
         }
     });
 
+    imageData.shift();
+    
     imageData.forEach((element) => {
         console.log(element);
     });
