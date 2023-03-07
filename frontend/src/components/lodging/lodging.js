@@ -2,12 +2,14 @@ import React from 'react';
 import './lodging.css'; 
 
 function Lodging({ cityData }) {
-  const airbnb = cityData.data.airbnb_url;
-  const kayak = cityData.data.kayak_lodgings_url;
+  const airbnb = cityData.data.attributes.airbnb_url;
+  const kayak = cityData.data.attributes.kayak_lodgings_url;
 
   const handleClick = (url) => {
-    window.location.href = url;
-  };
+    if (url) {
+      window.open(url, '_blank');
+    }
+  };  
 
   return (
     <div className="button-group">
