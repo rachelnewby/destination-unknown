@@ -154,34 +154,37 @@ function FlightForm() {
           </form>
         </div>
           <div className="container">
-              <div className="KnownFor">
-                {city && <KnownFor goatData={city} />}
-              </div>
-              <div className="PriceChart">
-                {flights && <PriceChart chartData={flights} />}
-              </div>
-              {error && <ErrorMessage error={error}/>}
-              <div className="recommendations">
-                {city && <Recommendations cityData={city} />}
-              </div>
-              <div className="lodging">
-                {city && <Lodging cityData={city} />}
+            <div class="col-1-container">
+              <div className="box3">
+                <h3 className="box3-header">Keep in mind</h3>
+                  <div className="Cases">
+                    {city && <Cases cityData={city} />}
+                  </div>
+                  <div className="budgetrating">
+                    {city && <BudgetRatings cityData={city} />}
+                  </div>
+                  <div className="safetyrating">
+                    {city && <SafetyRatings cityData={city} />}
+                  </div>
+                </div>
+                <div className="KnownFor">
+                  {city && <KnownFor goatData={city} />}
+                </div>
             </div>
-            <div className="box3">
-              <div className="Cases">
-                {city && <Cases cityData={city} />}
-              </div>
-              <div className="budgetrating">
-                {city && <BudgetRatings cityData={city} />}
-              </div>
-              <div className="safetyrating">
-                {city && <SafetyRatings cityData={city} />}
-              </div>
-            </div>
-            <div className="gallery">
-              {city && <Gallery goatData={city} />}
-            </div>
+          <div className="PriceChart">
+            {flights && <PriceChart chartData={flights} />}
           </div>
+            {error && <ErrorMessage error={error}/>}
+          <div className="recommendations">
+            {city && <Recommendations cityData={city} />}
+          </div>
+          <div className="lodging">
+            {city && <Lodging cityData={city} />}
+          </div>
+          <div className="gallery">
+            {city && <Gallery goatData={city} />}
+          </div>
+        </div>
     </main>
   );
 }

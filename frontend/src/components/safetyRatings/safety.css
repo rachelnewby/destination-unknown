@@ -18,18 +18,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative; /* Add this to make the child elements position relative to this container */
+    position: relative;
   }
   
   .safety-hover-text {
+    font-size: 10px;
     position: absolute;
-    top: 75%;
+    top: calc(50% + 10px);
     left: 50%;
+    transform: translateX(-50%);
     display: none;
     padding: 5px;
     background-color: #fff;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    white-space: nowrap;
   }
+  
+  
+  
+  
+  
+  
   
   .ratings-div:hover .safety-hover-text {
     display: block;
