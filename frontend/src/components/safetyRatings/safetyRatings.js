@@ -4,6 +4,15 @@ import '../ratings/ratings.css';
 
 function SafetyRatings( { cityData } ) {
   const cityName = cityData.data.attributes.name;
+
+  if (!cityData.data.attributes.safety[`${cityName}`]) {
+    return (
+      <div className="error-message">
+        No safety rating data available for this city.
+      </div>
+    )
+  }
+
   const safety = cityData.data.attributes.safety[`${cityName}`].value;
   const subText = cityData.data.attributes.safety[`${cityName}`].subText;
   const text = cityData.data.attributes.safety[`${cityName}`].text;
