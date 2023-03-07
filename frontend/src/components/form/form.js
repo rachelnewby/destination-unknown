@@ -23,15 +23,15 @@ const inbound = [
 ]
 
 const outbound = [
-  {place: "Heathrow", airportcode: "LHR"},
-  {place: "Manchester", airportcode: "MAN"},
-  {place: "Cardiff", airportcode: "CWL"},
-  {place: "Bristol", airportcode: "BRS"},
-  {place: "Edinburgh", airportcode: "EDI"},
-  {place: "Dublin", airportcode: "DUB"}
-]
+  { place: "Heathrow", airportcode: "LHR" },
+  { place: "Manchester", airportcode: "MAN" },
+  { place: "Cardiff", airportcode: "CWL" },
+  { place: "Bristol", airportcode: "BRS" },
+  { place: "Edinburgh", airportcode: "EDI" },
+  { place: "Dublin", airportcode: "DUB" },
+];
 
-function FlightForm(clickFunction) {
+function FlightForm() {
   const [numberOfTravellers, setNumberofTravellers] = useState("");
   const [outboundDestination, setOutboundDestination] = useState("");
   const [inboundDestination, setInboundDestination] = useState("");
@@ -47,94 +47,124 @@ function FlightForm(clickFunction) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const selectedInbound = inbound.find((option) => option.airportcode === inboundDestination);
+    const selectedInbound = inbound.find(
+      (option) => option.airportcode === inboundDestination
+    );
     const url = `http://localhost:4000/?city=${selectedInbound.name}&travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${selectedInbound.airportcode}&departureDate=${departureDate}&returnDate=${returnDate}`;
     console.log(url);
-  
+
     fetch(url, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Sorry, an error has occurred. Please try again.');
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (data.flights.items && data.flights.items.length > 0) {
-        console.log(data);
-        setFlights(data.flights);
-        console.log('flights', data);
-        setCity(data.city);
-        console.log('city', data.city)
-        setError(null);
-      } else {
-        throw new Error('Sorry, there are no flights matching your request. Please try again.');
-      }
-    })
-    .catch(error => {
-      console.log('Error:', error);
-      setError(`${error}`);
-    });
-    console.log("search clicked");
-    clickFunction.onButtonClick();
-  }
-    return (
-      <main class="content">
-          <h3 class="panel__title">Find a Flight</h3>
-        <form onSubmit={handleSubmit}>
-          <div class="form__row">
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Sorry, an error has occurred. Please try again.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.flights.items && data.flights.items.length > 0) {
+          console.log(data);
+          setFlights(data.flights);
+          console.log("flights", data);
+          setCity(data.city);
+          console.log("city", data.city);
+          setError(null);
+        } else {
+          throw new Error(
+            "Sorry, there are no flights matching your request. Please try again."
+          );
+        }
+      })
+      .catch((error) => {
+        console.log("Error:", error);
+        setError(`${error}`);
+      });
+  };
+  return (
+    <main class="content">
+      <h3 class="panel__title">Find a Flight</h3>
+      <form onSubmit={handleSubmit}>
+        <div class="form__row">
           <div class="form__input">
-          <div class="form__row">
+            <div class="form__row">
+              <div class="form__input">
+                <label>Outbound destination:</label>
+                <select
+                  className="form-control"
+                  value={outboundDestination}
+                  onChange={(event) =>
+                    setOutboundDestination(event.target.value)
+                  }
+                >
+                  <option value="">Select destination</option>
+                  {outbound.map((option) => (
+                    <option key={option.airportcode} value={option.airportcode}>
+                      {option.place}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="form__row">
           <div class="form__input">
-          <label>Outbound destination:</label>
-          <select className="form-control" value={outboundDestination} onChange={(event) => setOutboundDestination(event.target.value)}>
-                <option value="">Select destination</option>
-                {outbound.map((option) => (
-                  <option key={option.airportcode} value={option.airportcode}>{option.place}</option>
-                ))}
-              </select>
+            <label>Inbound destination:</label>
+            <select
+              className="form-control"
+              value={inboundDestination}
+              onChange={(event) => setInboundDestination(event.target.value)}
+            >
+              <option value="">Select destination</option>
+              {inbound.map((option) => (
+                <option key={option.airportcode} value={option.airportcode}>
+                  {option.place}
+                </option>
+              ))}
+            </select>
           </div>
-          </div>
-          </div>
-          </div>
-          <br />
-          <div class="form__row">
+        </div>
+        <br />
+        <div class="form__row">
           <div class="form__input">
-          <label>Inbound destination:</label>
-          <select className="form-control" value={inboundDestination} onChange={(event) => setInboundDestination(event.target.value)}>
-                <option value="">Select destination</option>
-                {inbound.map((option) => (
-                  <option key={option.airportcode} value={option.airportcode}>{option.place}</option>
-                ))}
-              </select>
+            <label>Departure date:</label>
+            <input
+              className="form-control"
+              type="text"
+              placeholder="YYYY-MM-DD"
+              value={departureDate}
+              onChange={(event) => setDepartureDate(event.target.value)}
+            />
           </div>
-          </div>
-          <br />
-          <div class="form__row">
+        </div>
+        <br />
+        <div class="form__row">
           <div class="form__input">
-          <label>Departure date:</label>
-            <input className="form-control" type="text" placeholder="YYYY-MM-DD" value={departureDate} onChange={(event) => setDepartureDate(event.target.value)} />
+            <label>Return date:</label>
+            <input
+              className="form-control"
+              type="text"
+              placeholder="YYYY-MM-DD"
+              value={returnDate}
+              onChange={(event) => setReturnDate(event.target.value)}
+            />
           </div>
-          </div>
-          <br />
-          <div class="form__row">
+        </div>
+        <br />
+        <div class="form__row">
           <div class="form__input">
-          <label>Return date:</label>
-            <input className="form-control" type="text" placeholder="YYYY-MM-DD" value={returnDate} onChange={(event) => setReturnDate(event.target.value)} />
-          </div>
-          </div>
-          <br />
-          <div class="form__row">
-          <div class="form__input">
-          <label>
-          Number of travellers:
-            </label>
-            <input className="form-control" type="text" value={numberOfTravellers} onChange={(event) => setNumberofTravellers(event.target.value)} />
-          </div>
+            <label>Number of travellers:</label>
+            <input
+              className="form-control"
+              type="text"
+              value={numberOfTravellers}
+              onChange={(event) => setNumberofTravellers(event.target.value)}
+            />
           </div>
           <br />
           <button type="submit">Search flights</button>
