@@ -53,7 +53,7 @@
 }
 .recommendations {
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +61,8 @@
   height: 100px;
   weight: 10px;
   width: 100px;
-  margin-left: 600px;
+  margin-left: 500px;
+  margin-top: 500px;
 }
 .budgetratings {
   display: flex;
@@ -84,7 +85,7 @@
 
 .lodging {
   grid-column: 2;
-  grid-row: 4;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,8 +93,9 @@
   height: 100px;
   weight: 100px;
   width: 100px;
-  margin-bottom: 10px;
-  margin-left: 600px;
+  margin-left: 500px;
+  margin-top: 650px;
+  margin-bottom: 50px;
 }
 
 .PriceChart {
@@ -109,4 +111,10 @@
   width: 300px;
   margin-top: 200px;
   margin-left: 30px;
+}
+
+.gallery {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 400px;
 }

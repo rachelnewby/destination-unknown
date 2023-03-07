@@ -2,7 +2,6 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import {CategoryScale} from 'chart.js';
 import Chart from 'chart.js/auto';
-import FlightLinkButton from '../flightLinkButton/flightLinkButton';
 
 const PriceChart = ( { chartData } ) => {
   const priceData = []
@@ -59,7 +58,6 @@ const PriceChart = ( { chartData } ) => {
           }
         }}
       />
-      <FlightLinkButton chartData={chartData} />
     </div>
   )
 }

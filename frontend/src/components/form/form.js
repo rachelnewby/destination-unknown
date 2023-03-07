@@ -153,15 +153,35 @@ function FlightForm() {
             </div>
           </form>
         </div>
-      {flights && <PriceChart chartData={flights} />}
-      {error && <ErrorMessage error={error} />}
-      {city && <BudgetRatings cityData={city} />}
-      {city && <SafetyRatings cityData={city} />}
-      {city && <KnownFor goatData={city} />}
-      {city && <Recommendations cityData={city} />}
-      {city && <Lodging cityData={city} />}
-      {city && <Cases cityData={city} />}
-      {city && <Gallery goatData={city} />}
+          <div className="container">
+              <div className="KnownFor">
+                {city && <KnownFor goatData={city} />}
+              </div>
+              <div className="PriceChart">
+                {flights && <PriceChart chartData={flights} />}
+              </div>
+              {error && <ErrorMessage error={error}/>}
+              <div className="recommendations">
+                {city && <Recommendations cityData={city} />}
+              </div>
+              <div className="lodging">
+                {city && <Lodging cityData={city} />}
+            </div>
+            <div className="box3">
+              <div className="Cases">
+                {city && <Cases cityData={city} />}
+              </div>
+              <div className="budgetrating">
+                {city && <BudgetRatings cityData={city} />}
+              </div>
+              <div className="safetyrating">
+                {city && <SafetyRatings cityData={city} />}
+              </div>
+            </div>
+            <div className="gallery">
+              {city && <Gallery goatData={city} />}
+            </div>
+          </div>
     </main>
   );
 }
