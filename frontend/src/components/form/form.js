@@ -94,89 +94,65 @@ function FlightForm() {
       });
   };
   return (
-    <main class="content">
-      <h3 class="panel__title">Find a Flight</h3>
-      <form onSubmit={handleSubmit}>
-        <div class="form__row">
-          <div class="form__input">
-            <div class="form__row">
-              <div class="form__input">
-                <label>Outbound destination:</label>
-                <select
-                  className="form-control"
-                  value={outboundDestination}
-                  onChange={(event) =>
-                    setOutboundDestination(event.target.value)
-                  }
-                >
-                  <option value="">Select destination</option>
-                  {outbound.map((option) => (
-                    <option key={option.airportcode} value={option.airportcode}>
-                      {option.place}
-                    </option>
-                  ))}
-                </select>
-              </div>
+    <main>
+      <div class="wrapper">
+        <form onSubmit={handleSubmit}>
+          <div class="form__row">
+            <div class="form__input">
+                  <label>From</label>
+                  <select
+                    className="form-control"
+                    value={outboundDestination}
+                    onChange={(event) =>
+                      setOutboundDestination(event.target.value)
+                    }
+                  >
+                    <option value="">City</option>
+                    {outbound.map((option) => (
+                      <option key={option.airportcode} value={option.airportcode}>
+                        {option.place}
+                      </option>
+                    ))}
+                  </select>
+              <label>To</label>
+              <select
+                className="form-control"
+                value={inboundDestination}
+                onChange={(event) => setInboundDestination(event.target.value)}
+              >
+                <option value="">City</option>
+                {inbound.map((option) => (
+                  <option key={option.airportcode} value={option.airportcode}>
+                    {option.place}
+                  </option>
+                ))}
+              </select>
+              <label>Depart:</label>
+              <input
+                className="form-control"
+                type="date"
+                value={departureDate}
+                onChange={(event) => setDepartureDate(event.target.value)}
+              />
+              <label>Return:</label>
+              <input
+                className="form-control"
+                type="date"
+                value={returnDate}
+                onChange={(event) => setReturnDate(event.target.value)}
+              />
+              <label>Travellers:</label>
+              <input
+                className="form-control"
+                type="text"
+                value={numberOfTravellers}
+                onChange={(event) => setNumberofTravellers(event.target.value)}
+              />
+            <button type="submit">Search flights</button>
             </div>
-          </div>
+            </div>
+          </form>
         </div>
-        <br />
-        <div class="form__row">
-          <div class="form__input">
-            <label>Inbound destination:</label>
-            <select
-              className="form-control"
-              value={inboundDestination}
-              onChange={(event) => setInboundDestination(event.target.value)}
-            >
-              <option value="">Select destination</option>
-              {inbound.map((option) => (
-                <option key={option.airportcode} value={option.airportcode}>
-                  {option.place}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-        <br />
-        <div class="form__row">
-          <div class="form__input">
-            <label>Departure date:</label>
-            <input
-              className="form-control"
-              type="date"
-              value={departureDate}
-              onChange={(event) => setDepartureDate(event.target.value)}
-            />
-          </div>
-        </div>
-        <br />
-        <div class="form__row">
-          <div class="form__input">
-            <label>Return date:</label>
-            <input
-              className="form-control"
-              type="date"
-              value={returnDate}
-              onChange={(event) => setReturnDate(event.target.value)}
-            />
-          </div>
-        </div>
-        <br />
-        <div class="form__row">
-          <div class="form__input">
-            <label>Number of travellers:</label>
-            <input
-              className="form-control"
-              type="text"
-              value={numberOfTravellers}
-              onChange={(event) => setNumberofTravellers(event.target.value)}
-            />
-          </div>
-        </div>
-        <br />
-        <button type="submit">Search flights</button>
-      </form>
       {flights && <PriceChart chartData={flights} />}
       {error && <ErrorMessage error={error} />}
       {city && <BudgetRatings cityData={city} />}
