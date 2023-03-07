@@ -3,7 +3,7 @@ import ReactLoading from "react-loading";
 
 const LoadingBar = ({ type, color }) => (
   <div className="loadingBar">
-    <ReactLoading type={type} color={color} height={667} width={375} />
+    <ReactLoading type={type} color={color} height={200} width={250} />
   </div>
 );
 

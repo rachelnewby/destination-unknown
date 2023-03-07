@@ -84,6 +84,7 @@ function FlightForm() {
           setSpinner(false);
           setError(null);
         } else {
+          setSpinner(false);
           throw new Error(
             "Sorry, there are no flights matching your request. Please try again."
           );
