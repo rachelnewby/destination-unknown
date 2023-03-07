@@ -1,9 +1,8 @@
 import React from "react";
 
 const Image = ({ imageData }) => {
-  // console.log("image.js " + imageData.photo);
   return (
-    <div id="image-div" style={{ border: "1px solid white" }}>
+    <div id="image-div">
       <img src={imageData.photo} alt="Destination" />
     </div>
   );

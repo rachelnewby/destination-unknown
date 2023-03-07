@@ -32,7 +32,7 @@ const Gallery = ({ goatData }) => {
   };
 
   return (
-    <div>
+    <div id="image-gallery">
       <h1>Gallery</h1>
       <div>
         <button onClick={goToPreviousImage}>{"<"}</button>
