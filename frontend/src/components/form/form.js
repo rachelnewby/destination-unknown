@@ -34,6 +34,7 @@ const outbound = [
   { place: "Dublin", airportcode: "DUB" },
 ];
 
+
 function FlightForm() {
   const [numberOfTravellers, setNumberofTravellers] = useState("");
   const [outboundDestination, setOutboundDestination] = useState("");
@@ -43,6 +44,8 @@ function FlightForm() {
   const [flights, setFlights] = useState(null);
   const [city, setCity] = useState(null);
   const [error, setError] = useState(null);
+  const formattedDepartureDate = `${departureDate.split('/').reverse().join('-')}`;
+  const formattedReturnDate = `${returnDate.split('/').reverse().join('-')}`;
 
   useEffect(() => {
     console.log("Flights updated:", flights);
@@ -53,7 +56,7 @@ function FlightForm() {
     const selectedInbound = inbound.find(
       (option) => option.airportcode === inboundDestination
     );
-    const url = `http://localhost:4000/?city=${selectedInbound.name}&travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${selectedInbound.airportcode}&departureDate=${departureDate}&returnDate=${returnDate}`;
+    const url = `http://localhost:4000/?city=${selectedInbound.name}&travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${selectedInbound.airportcode}&departureDate=${formattedDepartureDate}&returnDate=${formattedReturnDate}`;
     console.log(url);
 
     fetch(url, {
@@ -138,8 +141,7 @@ function FlightForm() {
             <label>Departure date:</label>
             <input
               className="form-control"
-              type="text"
-              placeholder="YYYY-MM-DD"
+              type="date"
               value={departureDate}
               onChange={(event) => setDepartureDate(event.target.value)}
             />
@@ -151,8 +153,7 @@ function FlightForm() {
             <label>Return date:</label>
             <input
               className="form-control"
-              type="text"
-              placeholder="YYYY-MM-DD"
+              type="date"
               value={returnDate}
               onChange={(event) => setReturnDate(event.target.value)}
             />
