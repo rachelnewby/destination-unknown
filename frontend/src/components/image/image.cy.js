@@ -1,12 +1,13 @@
-import mockRoadGoatData from "../roadGoatStatsChart/mockRoadGoatData";
 import Image from "./image.js";
 
-describe('Image', () => {
-    it('displays an image for each destination', () => {
-      cy.mount(<Image goatData={mockRoadGoatData} /> )
-        cy.get('#image-div')
-        .should('be.visible')
-      });
-    });
-  
-  
+const mockImage = {
+  photo:
+    "https://cdn.roadgoat.com/uploads/photo/image/2136/medium_steffen-muldbjerg-nMfmwgyZn3I-unsplash.jpg",
+};
+
+describe("Image", () => {
+  it("displays an image for each destination", () => {
+    cy.mount(<Image imageData={mockImage} />);
+    cy.get("#image-div").should("be.visible");
+  });
+});
