@@ -1,5 +1,6 @@
 import React from 'react';
 import './lodging.css'; 
+import Stack from 'react-bootstrap/Stack';
 
 function Lodging({ cityData }) {
   const airbnb = cityData.data.attributes.airbnb_url;
@@ -13,15 +14,15 @@ function Lodging({ cityData }) {
 
   return (
     <div className="button-group">
-      <h2 className="title">Lodging</h2>
-        <div className="button-wrapper">
+      <h2 className="title">Where to stay</h2>
+        <Stack direction="horizontal" gap={3}>
             <button type="button" onClick={() => handleClick(airbnb)} className="button">
-            <img src="/airbnb.png" alt="Airbnb icon" /> Airbnb
+            <img src="/airbnb.png" alt="Airbnb icon" />Airbnb
             </button>
             <button type="button" onClick={() => handleClick(kayak)} className="button">
-            <img src="/kayak.png" alt="Kayak icon" /> Kayak
+            <img src="/kayak.png" alt="Kayak icon" />Kayak
             </button>
-        </div>
+        </Stack>
     </div>
   );
 }

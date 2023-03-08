@@ -24,7 +24,7 @@ To run the Cypress testing suite, navigate into the frontend folder and run:
 `npm run cypress:open`
 
 The chart:
-`npm i react-chartjs-2 chart.js`
+`npm i react-chartjs-2`
 
 The loading wheel
 

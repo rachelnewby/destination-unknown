@@ -1,5 +1,6 @@
   import React from 'react';
   import './recommendations.css'; 
+  import Stack from 'react-bootstrap/Stack'
 
   function Recommendations({ cityData }) {
     const guide = cityData.data.attributes.getyourguide_url;
@@ -20,8 +21,8 @@
 
     return (
       <div className="button-group">
-        <h2 className="title">Recommendations</h2>
-          <div className="button-wrapper">
+        <h2 className="title">What to do</h2>
+          <Stack direction='horizontal' gap={3}>
               <button type="button" onClick={() => handleClick(guide)} className="button">
               <img src="/getyourguide.svg" alt="Get your guide icon" /> Guides
               </button>
@@ -34,7 +35,7 @@
               <button type="button" onClick={() => handleClick(hikes)} className="button">
               <img src="/alltrails.png" alt="All trails icon" /> All trails
               </button>
-          </div>
+          </Stack>
       </div>
     );
   }
