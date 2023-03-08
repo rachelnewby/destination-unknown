@@ -19,9 +19,11 @@
   "homepage": "https://github.com/rachelnewby/destination-unknown#readme",
   "dependencies": {
     "airport-codes": "^1.0.2",
+    "bootstrap": "^5.2.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "jquery": "^3.6.3"
+    "jquery": "^3.6.3",
+    "react-bootstrap": "^2.7.2"
   },
   "devDependencies": {
     "jest": "^29.4.3",

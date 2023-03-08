@@ -1,8 +1,7 @@
-// import logo from './logo.svg';
-import "./App.css";
 import React, { useState } from "react";
 import Toggle from "react-toggle";
 import FlightForm from "../form/form";
+import "./App.css";
 
 function App() {
   const [searchClicked, setSearchClicked] = useState(false);
@@ -15,38 +14,35 @@ function App() {
     setSearchClicked(false);
   };
 
-  if (searchClicked === false) {
-    return (
-      <div className="App">
-        <Toggle
-          className="react-toggle"
-          defaultChecked={searchClicked}
-          onChange={handleButtonClick}
-          icons={false}
-        />
-        <label className="button-label" htmlFor="second-city-select">
-          Add Second City
-        </label>
-        <FlightForm className="flightForm" id="firstCity" />
-      </div>
-    );
-  } else {
-    return (
-      <div className="App">
-        <Toggle
-          className="react-toggle"
-          defaultChecked={searchClicked}
-          onChange={handleButtonClickFalse}
-          icons={false}
-        />
-        <FlightForm className="flightForm" id="firstCity" />
-        <FlightForm className="flightForm" id="secondCity" />
-        <label className="button-label" htmlFor="second-city-select">
-          Remove Second City
-        </label>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <Toggle
+        className="react-toggle"
+        defaultChecked={searchClicked}
+        onChange={searchClicked ? handleButtonClickFalse : handleButtonClick}
+        icons={false}
+      />
+      <label className="button-label" htmlFor="second-city-select">
+        {searchClicked ? "Remove Second City" : "Add Second City"}
+      </label>
+      <div
+  className="forms-wrapper"
+  style={{
+    display: "grid",
+    gridTemplateColumns: searchClicked ? "1fr 1fr" : "1fr",
+  }}
+>
+  <div className="form-wrapper" style={{ gridColumn: "1 / 2" }}>
+    <FlightForm id="firstCity" />
+  </div>
+  {searchClicked && (
+    <div className="form-wrapper" style={{ gridColumn: "2 / 2" }}>
+      <FlightForm id="secondCity" />
+    </div>
+  )}
+  </div>
+</div>
+  );
 }
 
 export default App;

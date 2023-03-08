@@ -1,4 +1,4 @@
-import FlightForm from './form'
+
 
 describe('FlightForm', () => {
   it('user can enter dept, arr dates, arr/dept locations and traveller number', () => {
