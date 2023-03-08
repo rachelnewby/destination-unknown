@@ -99,7 +99,6 @@ function FlightForm() {
     <main>
             <div class="wrapper">
               <form onSubmit={handleSubmit}>
-                <div class="form__row form__row--flex">
                   <div class="form__col">
                     <label>From</label>
                     <select
@@ -129,7 +128,6 @@ function FlightForm() {
                         </option>
                       ))}
                     </select>
-                  </div>
                 </div>
                 <div class="form__row form__row--flex">
                   <div class="form__col">

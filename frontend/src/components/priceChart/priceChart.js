@@ -75,7 +75,6 @@ const PriceChart = ( { chartData } ) => {
 
   return (
     <div className="wrapper">
-      <div className="pricechart-container">
         <h3 id="chart-title">Here's your flight info</h3>
         <Bar
           id="bar-chart"
@@ -84,7 +83,6 @@ const PriceChart = ( { chartData } ) => {
           onClick = {onClick}
           ref = {chartRef}
         ></Bar>
-      </div>
     </div>
   )
 }
