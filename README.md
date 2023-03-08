@@ -3,14 +3,15 @@
 A flight price comparison site that gives you itinerary recommendations for your destination
 
 # Technologies
+
 React
 JavaScript
 Jest
 Cypress ru
 
 To run:
-Open a terminal and navigate into the 'api' folder. Run ```node app.js``` <br>
-In a seperate terminal, navigate into the 'frontend' folder. Run ```npm start build```
+Open a terminal and navigate into the 'api' folder. Run `node app.js` <br>
+In a seperate terminal, navigate into the 'frontend' folder. Run `npm start build`
 
 # API
 
@@ -20,11 +21,14 @@ Generate your key online, and save to a file named 'apikey.js' stored in api/cli
 # Frontend Testing
 
 To run the Cypress testing suite, navigate into the frontend folder and run:
-```npm run cypress:open```
+`npm run cypress:open`
 
 The chart:
-```npm i react-chartjs-2 chart.js```
+`npm i react-chartjs-2 chart.js`
 
+The loading wheel
+
+`npm i react-loading`
 
 # Authors
 
