@@ -34,7 +34,7 @@ const Gallery = ({ goatData }) => {
 
   return (
     <div className="wrapper">
-      <div id="image-container" className="wrapper">
+      <div id="image-container" className="gallery-wrapper">
         <Image imageData={imageData[currentIndex]} />
         <div id="button-container">
           <button onClick={goToPreviousImage}>{"<"}</button>

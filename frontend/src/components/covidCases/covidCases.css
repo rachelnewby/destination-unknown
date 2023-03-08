@@ -40,6 +40,7 @@
   font-size: 20px;
   text-rendering: optimizeLegibility;
   text-align: centeral;
+  margin-left: 10px;
 }
 
 .circle {
@@ -48,7 +49,8 @@
   border-radius: 50%;
   display: inline-block;
   margin-left: 5px;
-  border: 1px solid black;
+  border: 5px solid #F9F1F0;
+  padding: 3px;
 }
 
 .circle.low {
@@ -101,6 +103,7 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   font-family: "Trebuchet MS", sans-serif;
+  z-index: 1;
 }
 .covid-container:hover .covid-hover-text {
   display: block;
