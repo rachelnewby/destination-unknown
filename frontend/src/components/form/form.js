@@ -164,6 +164,7 @@ function FlightForm() {
                   </div>
                 </div>
               </form>
+              <div className='components-wrapper'>
                   <div className="Cases">
                     {city && <Cases cityData={city} />}
                   </div>
@@ -188,6 +189,7 @@ function FlightForm() {
                 <div className="gallery">
                   {city && <Gallery goatData={city} />}
                 </div>
+              </div>
         </div>
     </main>
   );
