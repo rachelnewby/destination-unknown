@@ -8,6 +8,7 @@ import Lodging from "../lodging/lodging";
 import Recommendations from "../recommendations/recommendations";
 import Cases from "../covidCases/covidCases";
 import KnownFor from "../knownFor/knownFor";
+import LoadingBar from "../loadingBar/loadingBar";
 import Gallery from "../gallery/gallery";
 
 const inbound = [
@@ -43,6 +44,7 @@ function FlightForm() {
   const [flights, setFlights] = useState(null);
   const [city, setCity] = useState(null);
   const [error, setError] = useState(null);
+  const [spinner, setSpinner] = useState(false);
   const formattedDepartureDate = `${departureDate
     .split("/")
     .reverse()
@@ -55,11 +57,13 @@ function FlightForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    setSpinner(true);
+
     const selectedInbound = inbound.find(
       (option) => option.airportcode === inboundDestination
     );
     const url = `http://localhost:4000/?city=${selectedInbound.name}&travellers=${numberOfTravellers}&outbound=${outboundDestination}&inbound=${selectedInbound.airportcode}&departureDate=${formattedDepartureDate}&returnDate=${formattedReturnDate}`;
-    console.log(url);
 
     fetch(url, {
       method: "GET",
@@ -75,13 +79,12 @@ function FlightForm() {
       })
       .then((data) => {
         if (data.flights.items && data.flights.items.length > 0) {
-          console.log(data);
           setFlights(data.flights);
-          console.log("flights", data);
           setCity(data.city);
-          console.log("city", data.city);
+          setSpinner(false);
           setError(null);
         } else {
+          setSpinner(false);
           throw new Error(
             "Sorry, there are no flights matching your request. Please try again."
           );

@@ -1,7 +1,22 @@
 import React from 'react'; 
-import { Bar } from 'react-chartjs-2';
-import {CategoryScale} from 'chart.js';
-import Chart from 'chart.js/auto';
+import { useRef } from 'react';
+import { 
+  Chart as ChartJS,
+  BarElement,
+  CategoryScale, 
+  LinearScale,
+  Tooltip,
+  Legend
+} from 'chart.js'
+import { Bar, getElementAtEvent, getElementsAtEvent } from 'react-chartjs-2';
+
+ChartJS.register(
+  BarElement,
+  CategoryScale, 
+  LinearScale,
+  Tooltip,
+  Legend
+)
 
 const PriceChart = ( { chartData } ) => {
   const priceData = []
@@ -39,8 +54,22 @@ const PriceChart = ( { chartData } ) => {
           ],
           borderWidth: 1,
           borderRadius: 10,
+          links: [chartData.items[0].deeplink, chartData.items[1].deeplink, chartData.items[2].deeplink]
         }
     ]
+  }
+
+  const options = { 
+    
+  }
+
+  const chartRef = useRef();
+  const onClick = (event) => {
+    if(getElementAtEvent(chartRef.current, event).length > 0) {
+      const datasetIndexNum = getElementAtEvent(chartRef.current, event)[0].datasetIndex;
+      const dataPoint = getElementAtEvent(chartRef.current, event)[0].index;
+      window.open(data.datasets[datasetIndexNum].links[dataPoint], '_blank')
+    }
   }
 
   return (
@@ -48,16 +77,11 @@ const PriceChart = ( { chartData } ) => {
       <h3 id="chart-title">Here's your flight info</h3>
       <Bar
         id="bar-chart"
-        data={data}
-        options={{
-          pluginst: {
-            title: {
-              display: true,
-              text: "Flight prices"
-            }
-          }
-        }}
-      />
+        data = {data}
+        options = {options}
+        onClick = {onClick}
+        ref = {chartRef}
+      ></Bar>
     </div>
   )
 }
