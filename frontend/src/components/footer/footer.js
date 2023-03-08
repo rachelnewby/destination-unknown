@@ -1,40 +1,40 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import './footer.css';
 
-function Footer () {
+const Footer = () => {
+  const year = new Date().getFullYear();
 
   return (
-    <section className="footer">
+    <footer className="footer">
       <hr className="footer-seperator" />
       <section className="footer-info">
         <section className="footer-info-left">
           <section className="footer-info__name">
-              @DestinatioN UnknowN
-          </section>       
+            copyright ©  Destination Unknown 2023
+          </section>
         </section>
         <section className="footer-info-center">
-          <section className="footer-info__git">
-            github idk
-          </section>
           <section className="footer-info__terms">
-            policy
+            <a href="/privacy-policy">Privacy Policy</a>
             <br />
-            Copyright
+            <a href="/terms-of-service">Terms of Service</a>
           </section>
         </section>
         <section className="footer-info-right">
           <section className="footer-info__contact">
-            Our Story
+            <a href="/about-us">About Us</a>
             <br />
-            Contact Us
+            <a href="/contact-us">Contact Us</a>
           </section>
         </section>
       </section>
       <hr className="footer-seperator" />
-    </section>
-  )
-
-}
+      <section className="footer-bottom">
+        <p>{`© ${year} My Awesome Website. All Rights Reserved.`}</p>
+      </section>
+    </footer>
+  );
+};
 
 export default Footer;
+

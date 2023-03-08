@@ -3,6 +3,7 @@ import "./App.css";
 import React, { useState } from "react";
 import Toggle from "react-toggle";
 import FlightForm from "../form/form";
+import Footer from "../footer/footer";
 
 function App() {
   const [searchClicked, setSearchClicked] = useState(false);
@@ -28,6 +29,7 @@ function App() {
           Add Second City
         </label>
         <FlightForm className="flightForm" id="firstCity" />
+        <Footer/>
       </div>
     );
   } else {
@@ -44,6 +46,7 @@ function App() {
         <label className="button-label" htmlFor="second-city-select">
           Remove Second City
         </label>
+        <Footer/>
       </div>
     );
   }
