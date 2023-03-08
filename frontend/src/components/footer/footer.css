@@ -1,0 +1,47 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: rgb(23, 21, 21);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-seperator {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info__name {
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.footer-info__logo {
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-info__name {
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.footer-info__logo a:hover,
+.footer-info__team a:hover {
+  color: pink;
+}
+
+.footer-bottom {
+  margin-top: 10px;
+  margin-bottom: -20px;
+  font-size: 12px;
+}
