@@ -7,7 +7,6 @@ import SafetyRatings from "../safetyRatings/safetyRatings";
 import Lodging from "../lodging/lodging";
 import Recommendations from "../recommendations/recommendations";
 import Cases from "../covidCases/covidCases";
-import Image from "../image/image";
 import KnownFor from "../knownFor/knownFor";
 import Gallery from "../gallery/gallery";
 
