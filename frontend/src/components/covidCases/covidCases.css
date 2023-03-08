@@ -1,8 +1,10 @@
 .covid-container {
   display: flex;
   align-items: center;
-  margin-left: 5px;
+  justify-content: center;
+  margin: 0 auto;
 }
+
 .covid-heading {
   margin-top: 17.5px;
   margin-right: 51px;
@@ -16,7 +18,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; /* Add this to make the child elements position relative to this container */
+  position: relative;
+
 }
 
 .covid-text {

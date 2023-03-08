@@ -9,6 +9,7 @@ import {
   Legend
 } from 'chart.js'
 import { Bar, getElementAtEvent, getElementsAtEvent } from 'react-chartjs-2';
+import './priceChart.css'
 
 ChartJS.register(
   BarElement,
@@ -73,15 +74,17 @@ const PriceChart = ( { chartData } ) => {
   }
 
   return (
-    <div>
-      <h3 id="chart-title">Here's your flight info</h3>
-      <Bar
-        id="bar-chart"
-        data = {data}
-        options = {options}
-        onClick = {onClick}
-        ref = {chartRef}
-      ></Bar>
+    <div className="wrapper">
+      <div className="pricechart-container">
+        <h3 id="chart-title">Here's your flight info</h3>
+        <Bar
+          id="bar-chart"
+          data = {data}
+          options = {options}
+          onClick = {onClick}
+          ref = {chartRef}
+        ></Bar>
+      </div>
     </div>
   )
 }

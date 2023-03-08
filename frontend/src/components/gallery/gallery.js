@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "../image/image";
+import './gallery.css'
 
 const Gallery = ({ goatData }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,7 +9,7 @@ const Gallery = ({ goatData }) => {
   goatData.included.forEach((element) => {
     if (element.type === "photo") {
       imageData.push({
-        photo: element.attributes.image.medium,
+        photo: element.attributes.image.large
       });
     }
   });
@@ -32,12 +33,13 @@ const Gallery = ({ goatData }) => {
   };
 
   return (
-    <div id="image-gallery">
-      <h1>Gallery</h1>
-      <div>
-        <button onClick={goToPreviousImage}>{"<"}</button>
+    <div className="wrapper">
+      <div id="image-container" className="wrapper">
         <Image imageData={imageData[currentIndex]} />
-        <button onClick={goToNextImage}>{">"}</button>
+        <div id="button-container">
+          <button onClick={goToPreviousImage}>{"<"}</button>
+          <button onClick={goToNextImage}>{">"}</button>
+        </div>
       </div>
     </div>
   );

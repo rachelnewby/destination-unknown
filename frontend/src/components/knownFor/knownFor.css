@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -13,6 +21,7 @@ body {
   border: 5px solid grey;
   border-radius: 15px;
   padding: 2px;
+  width: 40%;
 }
 
 .emoji-block {

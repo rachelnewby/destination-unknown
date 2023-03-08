@@ -14,7 +14,7 @@ const KnownFor = ({ goatData }) => {
   });
 
   return (
-    <div>
+    <div className="wrapper">
       <h3 id="knownfor-title">KNOWN FOR</h3>
       <div id="emoji-div">
         {emojiData.length > 0 ? (

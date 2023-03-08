@@ -9,6 +9,7 @@ import Cases from "../covidCases/covidCases";
 import KnownFor from "../knownFor/knownFor";
 import LoadingBar from "../loadingBar/loadingBar";
 import Gallery from "../gallery/gallery";
+import './form.css'
 
 const inbound = [
   { name: "paris-france", airportcode: "CDG", place: "Paris" },
@@ -96,18 +97,15 @@ function FlightForm() {
   };
   return (
     <main>
-      <div class="wrapper">
-        <div className="form-wrap">
-          <form onSubmit={handleSubmit}>
-            <div class="form__row">
-              <div class="form__input">
+            <div class="wrapper">
+              <form onSubmit={handleSubmit}>
+                <div class="form__row form__row--flex">
+                  <div class="form__col">
                     <label>From</label>
                     <select
                       className="form-control"
                       value={outboundDestination}
-                      onChange={(event) =>
-                        setOutboundDestination(event.target.value)
-                      }
+                      onChange={(event) => setOutboundDestination(event.target.value)}
                     >
                       <option value="">City</option>
                       {outbound.map((option) => (
@@ -116,49 +114,58 @@ function FlightForm() {
                         </option>
                       ))}
                     </select>
-                <label>To</label>
-                <select
-                  className="form-control"
-                  value={inboundDestination}
-                  onChange={(event) => setInboundDestination(event.target.value)}
-                >
-                  <option value="">City</option>
-                  {inbound.map((option) => (
-                    <option key={option.airportcode} value={option.airportcode}>
-                      {option.place}
-                    </option>
-                  ))}
-                </select>
-                <label>Depart:</label>
-                <input
-                  className="form-control"
-                  type="date"
-                  value={departureDate}
-                  onChange={(event) => setDepartureDate(event.target.value)}
-                />
-                <label>Return:</label>
-                <input
-                  className="form-control"
-                  type="date"
-                  value={returnDate}
-                  onChange={(event) => setReturnDate(event.target.value)}
-                />
-                <label>Travellers:</label>
-                <input
-                  className="form-control"
-                  type="text"
-                  value={numberOfTravellers}
-                  onChange={(event) => setNumberofTravellers(event.target.value)}
-                />
-              <button type="submit">Search flights</button>
-              </div>
-              </div>
-          </form>
-        </div>
-        </div>
-          <div className="container">
-            <div class="col-1-container">
-              <div className="box3">
+                  </div>
+                  <div class="form__col">
+                    <label>To</label>
+                    <select
+                      className="form-control"
+                      value={inboundDestination}
+                      onChange={(event) => setInboundDestination(event.target.value)}
+                    >
+                      <option value="">City</option>
+                      {inbound.map((option) => (
+                        <option key={option.airportcode} value={option.airportcode}>
+                          {option.place}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div class="form__row form__row--flex">
+                  <div class="form__col">
+                    <label>Depart:</label>
+                    <input
+                      className="form-control"
+                      type="date"
+                      value={departureDate}
+                      onChange={(event) => setDepartureDate(event.target.value)}
+                    />
+                  </div>
+                  <div class="form__col">
+                    <label>Return:</label>
+                    <input
+                      className="form-control"
+                      type="date"
+                      value={returnDate}
+                      onChange={(event) => setReturnDate(event.target.value)}
+                    />
+                  </div>
+                </div>
+                <div class="form__row form__row--flex">
+                  <div class="form__col">
+                    <label>Travellers:</label>
+                    <input
+                      className="form-control"
+                      type="text"
+                      value={numberOfTravellers}
+                      onChange={(event) => setNumberofTravellers(event.target.value)}
+                    />
+                  </div>
+                  <div class="form__col">
+                    <button type="submit">Search flights</button>
+                  </div>
+                </div>
+              </form>
                   <div className="Cases">
                     {city && <Cases cityData={city} />}
                   </div>
@@ -168,25 +175,22 @@ function FlightForm() {
                   <div className="safetyrating">
                     {city && <SafetyRatings cityData={city} />}
                   </div>
-                </div>
                 <div className="KnownFor">
                   {city && <KnownFor goatData={city} />}
                 </div>
-            </div>
-          <div className="PriceChart">
-            {flights && <PriceChart chartData={flights} />}
+                <div className="PriceChart">
+                  {flights && <PriceChart chartData={flights} />}
+                </div>
+                <div className="recommendations">
+                  {city && <Recommendations cityData={city} />}
+                </div>
+                <div className="lodging">
+                  {city && <Lodging cityData={city} />}
+                </div>
+                <div className="gallery">
+                  {city && <Gallery goatData={city} />}
+                </div>
           </div>
-            {error && <ErrorMessage error={error}/>}
-          <div className="recommendations">
-            {city && <Recommendations cityData={city} />}
-          </div>
-          <div className="lodging">
-            {city && <Lodging cityData={city} />}
-          </div>
-          <div className="gallery">
-            {city && <Gallery goatData={city} />}
-          </div>
-        </div>
     </main>
   );
 }
