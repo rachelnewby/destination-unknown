@@ -1,7 +1,15 @@
 .safety-container {
     display: flex;
     align-items: center;
-    margin-right: 70px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #F8AFA6;
+    border: 5px solid #F9F1F0;
+    border-radius: 15px;
+    padding: 15px;
+    width: 250px;
+    height: 50px;
   }
   
   .safety-heading {

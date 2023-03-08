@@ -1,9 +1,27 @@
+
+.lodging-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+.button-group {
+  border: 5px solid #F9F1F0;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #F8AFA6;
+  margin-top: 10px;
+}
+
 .button {
   width: 25%;
   margin-bottom: 4%;
   border: 1px solid coral; /* set the initial border */
   border-radius: 4px; /* add rounded corners */
-  transition: border-color 0.2s ease-in-out; /* add transition effect */
+  transition: border-color 0.2s ease-in-out;
 }
 
 .button:hover {
@@ -23,9 +41,3 @@
   text-rendering: optimizeLegibility;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}

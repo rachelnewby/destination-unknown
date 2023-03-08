@@ -13,7 +13,7 @@ function Lodging({ cityData }) {
   };  
 
   return (
-    <div className="wrapper">
+    <div className="lodging-wrapper">
       <div className="button-group">
         <h2 className="title">Where to stay</h2>
           <Stack direction="horizontal" gap={3}>

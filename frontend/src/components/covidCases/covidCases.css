@@ -1,13 +1,23 @@
 .covid-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #F8AFA6;
+  border: 5px solid #F9F1F0;
+  border-radius: 15px;
+  padding: 15px;
+  width: 250px;
+  height: 50px;
 }
 
 .covid-heading {
   margin-top: 17.5px;
   margin-right: 51px;
+  align-items: center;
+  justify-content: center;
+  display: flex; 
 }
 
 .covid-div:hover .budget-hover-text {
@@ -55,10 +65,14 @@
 
 .circle.critical {
   background-color: red;
+  
 }
 
 .circle.extreme {
   background-color: darkred;
+  align-items: center;
+  justify-content: center;
+  display: flex; 
 }
 
 .low,
@@ -70,6 +84,9 @@
   font-family: "Trebuchet MS", sans-serif;
   font-size: 20px;
   text-rendering: optimizeLegibility;
+  align-items: center;
+  justify-content: center;
+  display: flex; 
 }
 
 .covid-hover-text {

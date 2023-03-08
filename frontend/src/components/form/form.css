@@ -32,7 +32,7 @@
 
 .form__col > button {
   width: 90%;
-  background-color: #4CAF50; /* Change this to the desired color */
+  background-color: #68E7E0; /* Change this to the desired color */
   color: white;
   padding: 4px;
   border: none;
@@ -43,7 +43,7 @@
 }
 
 .form__col > button:hover {
-  background-color: #3e8e41; /* Change this to the desired hover color */
+  background-color: #68E7E0; /* Change this to the desired hover color */
 }
 
 .form__row {
@@ -68,4 +68,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-background {
+  background-color: #FADCD9;
+}
+
+.gallary {
+  background-color: #F9F1F0;
+}
+.PriceChart{
+  background-color: #F8AFA6;
+  border-radius: 15px;
+}
+.whole-background{
+  background-color: #FADCD9;
+}
+.KnownFor{
+  background-color: #FADCD9;
+  border-radius: 15px;
 }
