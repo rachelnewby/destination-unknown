@@ -5,6 +5,11 @@
   align-items: flex-start; /* align to top */
 }
 
+body {
+  margin: 0;
+  padding-top: 80px; /* adjust the value as needed */
+}
+
 .button-label {
   color: white;
   position: absolute; /* position the label */
