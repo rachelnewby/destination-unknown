@@ -30,9 +30,8 @@
   text-align: center;
 }
 
-.footer-info__name {
-  font-weight: lighter;
-  font-size: 15px;
+.footer-info__team {
+ text-align: right;
 }
 
 .footer-info__logo a:hover,

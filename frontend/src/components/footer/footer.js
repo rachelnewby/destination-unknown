@@ -22,7 +22,9 @@ const Footer = () => {
         </section>
         <section className="footer-info-right">
           <section className="footer-info__team">
-            Adam Hoar <a href="https://github.com/amh4" target="_blank" rel="noopener noreferrer">GitHub</a>  Chioma Igwe <a href="https://github.com/UserChi" target="_blank" rel="noopener noreferrer">GitHub</a>   Millie Severino <a href="https://github.com/MillieKS" target="_blank" rel="noopener noreferrer">GitHub</a>  Rachel Newby <a href="https://github.com/rachelnewby" target="_blank" rel="noopener noreferrer">GitHub</a>   Shaun Flood <a href="https://github.com/ShaunFlood" target="_blank" rel="noopener noreferrer">GitHub</a>
+            Adam Hoar <a href="https://github.com/amh4" target="_blank" rel="noopener noreferrer">GitHub</a>  Chioma Igwe <a href="https://github.com/UserChi" target="_blank" rel="noopener noreferrer">GitHub</a>  
+            <br/>
+             Millie Severino <a href="https://github.com/MillieKS" target="_blank" rel="noopener noreferrer">GitHub</a>  Rachel Newby <a href="https://github.com/rachelnewby" target="_blank" rel="noopener noreferrer">GitHub</a>   Shaun Flood <a href="https://github.com/ShaunFlood" target="_blank" rel="noopener noreferrer">GitHub</a>
 
 
           </section>
