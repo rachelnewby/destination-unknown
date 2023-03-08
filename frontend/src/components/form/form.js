@@ -10,6 +10,7 @@ import Cases from "../covidCases/covidCases";
 import Image from "../image/image";
 import KnownFor from "../knownFor/knownFor";
 import LoadingBar from "../loadingBar/loadingBar";
+import Gallery from "../gallery/gallery";
 
 const inbound = [
   { name: "paris-france", airportcode: "CDG", place: "Paris" },
@@ -188,7 +189,7 @@ function FlightForm() {
       {city && <Recommendations cityData={city} />}
       {city && <Lodging cityData={city} />}
       {city && <Cases cityData={city} />}
-      {city && <Image goatData={city} />}
+      {city && <Gallery goatData={city} />}
     </main>
   );
 }
