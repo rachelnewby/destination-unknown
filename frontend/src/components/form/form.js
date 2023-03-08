@@ -97,7 +97,7 @@ function FlightForm() {
   };
   return (
     <main>
-            <div class="wrapper">
+        <div class="wrapper">
               <form onSubmit={handleSubmit}>
                   <div class="form__col">
                     <label>From</label>
@@ -188,7 +188,7 @@ function FlightForm() {
                 <div className="gallery">
                   {city && <Gallery goatData={city} />}
                 </div>
-          </div>
+        </div>
     </main>
   );
 }
