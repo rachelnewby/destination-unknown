@@ -10,6 +10,8 @@ import Cases from "../covidCases/covidCases";
 import KnownFor from "../knownFor/knownFor";
 import LoadingBar from "../loadingBar/loadingBar";
 import Gallery from "../gallery/gallery";
+import Footer from "../footer/footer";
+
 
 const inbound = [
   { name: "paris-france", airportcode: "CDG", place: "Paris" },
