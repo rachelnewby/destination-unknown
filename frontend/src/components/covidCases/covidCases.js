@@ -8,8 +8,12 @@ function Cases({ cityData }) {
   const text = covidData.text
 
   return (
-    <div className="covid-container">
-      <h1><span className="covid-text">Covid  </span><span className={`circle ${text.toLowerCase()}`} /> <span className={text.toLowerCase()} title="Based on 7-day Covid Cases per 100k people in the country provided by Worldometer">{text}</span></h1>
+    <div className="covid-div">
+      <div className="covid-container">
+        <h4 className="covid-heading">Covid:
+         <span className={`circle ${text.toLowerCase()}`} /> <span className="covid-hover-text"> Based on 7-day Covid Cases per 100k people in the country</span><span className="covid-text">{text}</span>
+        </h4>
+      </div>
     </div>
   );
 }

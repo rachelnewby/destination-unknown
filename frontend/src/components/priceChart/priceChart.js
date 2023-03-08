@@ -82,7 +82,6 @@ const PriceChart = ( { chartData } ) => {
         onClick = {onClick}
         ref = {chartRef}
       ></Bar>
-
     </div>
   )
 }

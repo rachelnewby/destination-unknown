@@ -1,6 +1,6 @@
-import React from "react";
-import Rating from "react-rating";
-import "../ratings/ratings.css";
+import React from 'react';
+import Rating from 'react-rating';
+import './safety.css'
 
 function SafetyRatings({ cityData }) {
   const cityName = cityData.data.attributes.name;
@@ -19,40 +19,40 @@ function SafetyRatings({ cityData }) {
 
   return (
     <div className="ratings-div">
-      <h3>Safety rating based on local crime and geo-political risk</h3>
-      <p>
-        The safety rating is {text.toLowerCase()}, you should{" "}
-        {subText.toLowerCase()}!
-      </p>
-      <Rating
-        start={0}
-        stop={5}
-        step={1}
-        readonly={true}
-        initialRating={safety}
-        fullSymbol={
-          <img
-            src={"/safetyIcon.png"}
-            className="safety-full"
-            width={40}
-            height={40}
-            alt=""
-            style={{ marginRight: "2px" }}
-          />
-        }
-        emptySymbol={
-          <img
-            src={"/emptyIcon.png"}
-            className="safety-empty"
-            width={40}
-            height={40}
-            alt=""
-            style={{ marginRight: "2px" }}
-          />
-        }
-      />
+      <div className="safety-container">
+        <h4 className="safety-heading">Safety:
+          <span className="safety-hover-text">The safety rating is {text.toLowerCase()}, you should {subText.toLowerCase()}!</span>
+        </h4>
+        <Rating
+          start={0}
+          stop={5}
+          step={1}
+          readonly={true}
+          initialRating={safety}
+          fullSymbol={
+            <img
+              src={'/safetyIcon.png'}
+              className='safety-full'
+              width={30}
+              height={30}
+              alt=""
+              style={{ marginRight: '1px' }}
+            />
+          }
+          emptySymbol={
+            <img
+              src={'/emptyIcon.png'}
+              className='safety-empty'
+              width={30}
+              height={30}
+              alt=""
+              style={{ marginRight: '1px' }}
+            />
+          }
+        />
+      </div>
     </div>
   );
-}
+}  
 
-export default SafetyRatings;
+export default SafetyRatings; 

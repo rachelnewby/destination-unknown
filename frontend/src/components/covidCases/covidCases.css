@@ -1,15 +1,32 @@
 .covid-container {
   display: flex;
   align-items: center;
+  margin-left: 5px;
+}
+.covid-heading {
+  margin-top: 17.5px;
+  margin-right: 51px;
+}
+
+.covid-div:hover .budget-hover-text {
+  display: block;
+}
+.covid-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Add this to make the child elements position relative to this container */
 }
 
 .covid-text {
-  color: hsl(30, 5%, 85%);
+  color: black;
   font-weight: bold;
-  margin-right: 5px;
+  margin-right: 45px;
   font-family: "Trebuchet MS", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   text-rendering: optimizeLegibility;
+  text-align: centeral;
 }
 
 .circle {
@@ -17,8 +34,8 @@
   height: 12px;
   border-radius: 50%;
   display: inline-block;
-  margin-bottom: 1px;
-  border: 1px solid hsl(30, 5%, 85%);
+  margin-left: 5px;
+  border: 1px solid black;
 }
 
 .circle.low {
@@ -46,31 +63,25 @@
 .high,
 .extreme,
 .critical {
-  color: hsl(30, 5%, 85%);
+  color: black(30, 5%, 85%);
   font-family: "Trebuchet MS", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   text-rendering: optimizeLegibility;
 }
 
-/* Tooltip */
-.covid-container h1 span[title] {
-  position: relative;
-}
-
-.covid-container h1 span[title]::before {
-  content: attr(title);
-  display: none;
+.covid-hover-text {
+  font-size: 10px;
   position: absolute;
-  bottom: 100%;
+  top: calc(50% + 10px);
   left: 50%;
-  transform: translateX(-50%) scale(0.5);
-  padding: 1px 2px; /* smaller padding */
-  background-color: hsl(210, 15%, 15%);
-  color: #fff;
-  border-radius: 4px;
+  transform: translateX(-50%);
+  display: none;
+  padding: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
+  font-family: "Trebuchet MS", sans-serif;
 }
-
-.covid-container h1 span[title]:hover::before {
+.covid-container:hover .covid-hover-text {
   display: block;
 }
