@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import './form.css';
-import PriceChart from '../priceChart/priceChart';
-import ErrorMessage from '../errorMessage/errorMessage';
-import BudgetRatings from '../ratings/budgetRatings';
-import SafetyRatings from '../safetyRatings/safetyRatings';
-import Lodging from '../lodging/lodging';
-import Recommendations from '../recommendations/recommendations';
-import Cases from '../covidCases/covidCases';
-import Image from '../image/image';
-import KnownFor from '../knownFor/knownFor';
-import FlightPriceChart from '../flightPriceChart/flightPriceChart';
+import React, { useState, useEffect } from "react";
+import "./form.css";
+import PriceChart from "../priceChart/priceChart";
+import ErrorMessage from "../errorMessage/errorMessage";
+import BudgetRatings from "../ratings/budgetRatings";
+import SafetyRatings from "../safetyRatings/safetyRatings";
+import Lodging from "../lodging/lodging";
+import Recommendations from "../recommendations/recommendations";
+import Cases from "../covidCases/covidCases";
+import Image from "../image/image";
+import KnownFor from "../knownFor/knownFor";
+import Gallery from "../gallery/gallery";
 
 const inbound = [
-  {name: "paris-france", airportcode: "CDG", place: 'Paris'},
-  {name: "bologna-italy", airportcode: "BLQ", place: 'Bologna'},
-  {name: "rome-italy", airportcode: "FCO", place: 'Rome'},
-  {name: "barcelona-spain", airportcode: "BCN", place: 'Barcelona'},
-  {name: "ibiza-spain", airportcode: "IBZ", place: 'Ibiza'},
-  {name: "lisbon-portugal", airportcode: "LIS", place: 'Lisbon'},
-  {name: "porto-portugal", airportcode: "OPO", place: 'Porto'},
-  {name: "copenhagen-denmark", airportcode: "CPH", place: 'Copenhagen'},
-  {name: "budapest-hungary", airportcode: "BUD", place: 'Budapest'},  
-  {name: "prague-czech-republic", airportcode: "PRG", place: 'Prague'},
-  {name: "athens-greece", airportcode: "ASH", place: 'Athens'},
-  {name: "krakow-poland", airportcode: "KRK", place: 'Krakow'}
-]
+  { name: "paris-france", airportcode: "CDG", place: "Paris" },
+  { name: "bologna-italy", airportcode: "BLQ", place: "Bologna" },
+  { name: "rome-italy", airportcode: "FCO", place: "Rome" },
+  { name: "barcelona-spain", airportcode: "BCN", place: "Barcelona" },
+  { name: "ibiza-spain", airportcode: "IBZ", place: "Ibiza" },
+  { name: "lisbon-portugal", airportcode: "LIS", place: "Lisbon" },
+  { name: "porto-portugal", airportcode: "OPO", place: "Porto" },
+  { name: "copenhagen-denmark", airportcode: "CPH", place: "Copenhagen" },
+  { name: "budapest-hungary", airportcode: "BUD", place: "Budapest" },
+  { name: "prague-czech-republic", airportcode: "PRG", place: "Prague" },
+  { name: "athens-greece", airportcode: "ASH", place: "Athens" },
+  { name: "krakow-poland", airportcode: "KRK", place: "Krakow" },
+];
 
 const outbound = [
   { place: "Heathrow", airportcode: "LHR" },
@@ -35,7 +35,6 @@ const outbound = [
   { place: "Dublin", airportcode: "DUB" },
 ];
 
-
 function FlightForm() {
   const [numberOfTravellers, setNumberofTravellers] = useState("");
   const [outboundDestination, setOutboundDestination] = useState("");
@@ -45,8 +44,11 @@ function FlightForm() {
   const [flights, setFlights] = useState(null);
   const [city, setCity] = useState(null);
   const [error, setError] = useState(null);
-  const formattedDepartureDate = `${departureDate.split('/').reverse().join('-')}`;
-  const formattedReturnDate = `${returnDate.split('/').reverse().join('-')}`;
+  const formattedDepartureDate = `${departureDate
+    .split("/")
+    .reverse()
+    .join("-")}`;
+  const formattedReturnDate = `${returnDate.split("/").reverse().join("-")}`;
 
   useEffect(() => {
     console.log("Flights updated:", flights);
@@ -172,21 +174,20 @@ function FlightForm() {
             />
           </div>
         </div>
-          <br />
-          <button type="submit">Search flights</button>
-        </form>
-        {flights && <PriceChart chartData={flights} />}
-        {error && <ErrorMessage error={error}/>}
-        {city && <BudgetRatings cityData={city} />}
-        {city && <SafetyRatings cityData={city} />}
-        {city && <KnownFor goatData={city} />}
-        {city && <Recommendations cityData={city} />}
-        {city && <Lodging cityData={city} />}
-        {city && <Cases cityData={city} />}
-        {city && <Image goatData={city} />}
-      </main>
-    );
-  };
+        <br />
+        <button type="submit">Search flights</button>
+      </form>
+      {flights && <PriceChart chartData={flights} />}
+      {error && <ErrorMessage error={error} />}
+      {city && <BudgetRatings cityData={city} />}
+      {city && <SafetyRatings cityData={city} />}
+      {city && <KnownFor goatData={city} />}
+      {city && <Recommendations cityData={city} />}
+      {city && <Lodging cityData={city} />}
+      {city && <Cases cityData={city} />}
+      {city && <Gallery goatData={city} />}
+    </main>
+  );
+}
 
-
-  export default FlightForm;
+export default FlightForm;
