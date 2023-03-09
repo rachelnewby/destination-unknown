@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Toggle from "react-toggle";
 import FlightForm from "../form/form";
@@ -25,17 +24,19 @@ function App() {
           onChange={handleButtonClick}
           icons={false}
         />
-        <div className="firstform-wrapper"
+        <div
+          className="firstform-wrapper"
           style={{
             display: "grid",
-          }}>
-        <label className="button-label" htmlFor="second-city-select">
-          Add Second City
-        </label>
-        <div className="firstform-wrapper" style={{ gridColumn: "1" }}>
-        <FlightForm className="flightForm" id="firstCity" />
+          }}
+        >
+          <label className="button-label" htmlFor="second-city-select">
+            Add Second City
+          </label>
+          <div className="firstform-wrapper" style={{ gridColumn: "1" }}>
+            <FlightForm className="flightForm" id="firstCity" />
+          </div>
         </div>
-      </div>
       </div>
     );
   } else {
@@ -48,18 +49,25 @@ function App() {
             onChange={handleButtonClickFalse}
             icons={false}
           />
-          <label className="button-label" htmlFor="second-city-select">
-          </label>
+          <label className="button-label" htmlFor="second-city-select"></label>
         </div>
-        <div className="forms-wrapper"
+        <div
+          className="forms-wrapper"
           style={{
             display: "grid",
             gridTemplateColumns: searchClicked ? "1fr 1fr" : "1fr",
-          }}>
-          <div className="form-wrapper" style={{ gridColumn: "1 / 1", marginTop: '20px' }}>
+          }}
+        >
+          <div
+            className="form-wrapper"
+            style={{ gridColumn: "1 / 1", marginTop: "20px" }}
+          >
             <FlightForm className="flightForm" id="firstCity" />
           </div>
-          <div className="form-wrapper" style={{ gridColumn: "2 / 2", marginTop: '20px' }}>
+          <div
+            className="form-wrapper"
+            style={{ gridColumn: "2 / 2", marginTop: "20px" }}
+          >
             <FlightForm className="flightForm" id="secondCity" />
           </div>
         </div>
