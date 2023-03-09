@@ -88,3 +88,10 @@
   background-color: #fadcd9;
   border-radius: 15px;
 }
+.heading{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

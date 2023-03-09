@@ -9,6 +9,7 @@ import Cases from "../covidCases/covidCases";
 import KnownFor from "../knownFor/knownFor";
 import LoadingBar from "../loadingBar/loadingBar";
 import Gallery from "../gallery/gallery";
+import Heading from "../heading/heading";
 import './form.css'
 
 const inbound = [
@@ -167,6 +168,9 @@ function FlightForm() {
                 </div>
               </form>
               <div className='components-wrapper'>
+                  <div className="heading">
+                    {city && <Heading cityData={city}/>}
+                  </div>
                   <div className="gallery">
                     {city && <Gallery goatData={city} />}
                   </div>
