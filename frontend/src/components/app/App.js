@@ -38,7 +38,7 @@ function App() {
           <label className="button-label" htmlFor="second-city-select">
             Add Second City
           </label>
-          <div className="firstform-wrapper" style={{ gridColumn: "1" }}>
+          <div className="firstform-wrapper" style={{ gridColumn: "1", marginTop: "75px", }}>
             <FlightForm className="flightForm" id="firstCity" />
           </div>
           <div>
@@ -72,13 +72,13 @@ function App() {
         >
           <div
             className="form-wrapper"
-            style={{ gridColumn: "1 / 1", marginTop: "20px" }}
+            style={{ gridColumn: "1 / 1", marginTop: "75px" }}
           >
             <FlightForm className="flightForm" id="firstCity" />
           </div>
           <div
             className="form-wrapper"
-            style={{ gridColumn: "2 / 2", marginTop: "20px" }}
+            style={{ gridColumn: "2 / 2", marginTop: "75px", }}
           >
             <FlightForm className="flightForm" id="secondCity" />
           </div>
