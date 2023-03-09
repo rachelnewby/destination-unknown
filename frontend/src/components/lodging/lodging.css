@@ -1,22 +1,27 @@
-.button-group {
-  display: inline-block;
-  text-align: center; /* center the button wrapper */
-  margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.lodging-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+
 }
 
-.button-wrapper {
-  display: inline-block; /* display the button wrapper inline */
+.button-group {
+  border: 5px solid #F9F1F0;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #F8AFA6;
+  margin-top: 10px;
 }
 
 .button {
-  display: flex;
-  align-items: center;
-  width: 120px;
-  margin-bottom: 4px;
-  border: 1px solid gray; /* set the initial border */
+  width: 25%;
+  margin-bottom: 4%;
+  border: 1px solid coral; /* set the initial border */
   border-radius: 4px; /* add rounded corners */
-  transition: border-color 0.2s ease-in-out; /* add transition effect */
+  transition: border-color 0.2s ease-in-out;
 }
 
 .button:hover {
@@ -35,7 +40,4 @@
   margin-bottom: 8px;
   text-rendering: optimizeLegibility;
 }
-
-
-
 
