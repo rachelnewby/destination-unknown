@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Toggle from "react-toggle";
 import FlightForm from "../form/form";
 import Header from "../header/header";
-
+import Footer from "../footer/footer";
 import "./App.css";
 
 function App() {
@@ -39,6 +39,9 @@ function App() {
           </label>
           <div className="firstform-wrapper" style={{ gridColumn: "1" }}>
             <FlightForm className="flightForm" id="firstCity" />
+          </div>
+          <div>
+            <Footer />
           </div>
         </div>
       </div>
@@ -78,6 +81,9 @@ function App() {
           >
             <FlightForm className="flightForm" id="secondCity" />
           </div>
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     );
