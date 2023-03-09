@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+  padding-bottom: 5px;
 }
 
 .form__col:last-of-type {
@@ -19,6 +20,7 @@
   font-size: 16px;
   width: 100%;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .form__col input {
@@ -56,6 +58,8 @@
 
 .form-control {
   font-size: 16px;
+  padding:10px;
+  border-radius:10px;
 }
 
 .form__row:last-of-type {
