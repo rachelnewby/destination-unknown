@@ -20,12 +20,7 @@ function App() {
     return (
       <div className="App">
         <Header className="app-header"/>
-        <Toggle
-          className="react-toggle"
-          defaultChecked={searchClicked}
-          onChange={handleButtonClick}
-          icons={false}
-        />
+        
         <div
           className="firstform-wrapper"
           style={{
@@ -33,6 +28,12 @@ function App() {
             padding: '75px',
           }}
         >
+          <Toggle
+          className="react-toggle"
+          defaultChecked={searchClicked}
+          onChange={handleButtonClick}
+          icons={false}
+        />
           <label className="button-label" htmlFor="second-city-select">
             Add Second City
           </label>
@@ -45,31 +46,35 @@ function App() {
   } else {
     return (
       <div className="App">
+        <Header className="app-header"/>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Toggle
-            className="react-toggle"
-            defaultChecked={searchClicked}
-            onChange={handleButtonClickFalse}
-            icons={false}
-          />
-          <label className="button-label" htmlFor="second-city-select"></label>
+          
         </div>
         <div
           className="forms-wrapper"
           style={{
             display: "grid",
             gridTemplateColumns: searchClicked ? "1fr 1fr" : "1fr",
+            padding: '75px',
           }}
         >
           <div
             className="form-wrapper"
-            style={{ gridColumn: "1 / 1", marginTop: "20px" }}
+            style={{ gridColumn: "1 / 1" }}
           >
+            <Toggle
+            className="react-toggle"
+            defaultChecked={searchClicked}
+            onChange={handleButtonClickFalse}
+            icons={false}
+          />
+          <label className="button-label" htmlFor="second-city-select">Remove second city</label>
             <FlightForm className="flightForm" id="firstCity" />
           </div>
+
           <div
             className="form-wrapper"
-            style={{ gridColumn: "2 / 2", marginTop: "20px" }}
+            style={{ gridColumn: "2 / 2", marginTop: "38px", }}
           >
             <FlightForm className="flightForm" id="secondCity" />
           </div>
