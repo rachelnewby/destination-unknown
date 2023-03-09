@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Toggle from "react-toggle";
 import FlightForm from "../form/form";
+import Header from "../header/header";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ function App() {
   if (searchClicked === false) {
     return (
       <div className="App">
+        <Header className="app-header"/>
         <Toggle
           className="react-toggle"
           defaultChecked={searchClicked}
@@ -28,6 +30,7 @@ function App() {
           className="firstform-wrapper"
           style={{
             display: "grid",
+            padding: '75px',
           }}
         >
           <label className="button-label" htmlFor="second-city-select">
