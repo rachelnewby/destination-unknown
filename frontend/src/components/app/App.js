@@ -3,6 +3,7 @@ import Toggle from "react-toggle";
 import FlightForm from "../form/form";
 import Header from "../header/header";
 import Footer from "../footer/footer";
+import Hero from "../hero/hero"
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
     return (
     <div>
       <Header />
+      <Hero />
       <div className="App">
         <Toggle
           className="react-toggle"
