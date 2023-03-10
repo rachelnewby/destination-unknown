@@ -4,6 +4,7 @@ import FlightForm from "../form/form";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import Hero from "../hero/hero"
+import CompareImage from "../compare/compare";
 
 import "./App.css";
 
@@ -41,6 +42,7 @@ function App() {
             Add Second City
           </label>
           <div className="firstform-wrapper" style={{ gridColumn: "1", marginTop: "75px", }}>
+          <h1 style={{ fontSize: 29, color:"#E6694C", textAlign: "center" }}>Start Your Search Here</h1>
             <FlightForm className="flightForm" id="firstCity" />
           </div>
           <div>
@@ -54,6 +56,7 @@ function App() {
     return (
       <div>
         <Header />
+          <CompareImage />
       <div className="App">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Toggle
@@ -69,6 +72,7 @@ function App() {
           className="forms-wrapper"
           style={{
             display: "grid",
+            paddingBottom: 50,
             gridTemplateColumns: searchClicked ? "1fr 1fr" : "1fr",
           }}
         >

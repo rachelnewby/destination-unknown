@@ -1,9 +1,9 @@
 import React from 'react';
-import Logo from '../assets/hero.png';
+import Logo from '../assets/compare.png';
 // import {NavLink, Link} from 'react-router-dom';
-import './hero.css'
+import './compare.css'
 
-const Hero = () => {
+const CompareImage = () => {
     return(
         <div className='heroWrapper'>
             <div>
@@ -19,4 +19,4 @@ const Hero = () => {
     )
 }
 
-export default Hero;
+export default CompareImage;
