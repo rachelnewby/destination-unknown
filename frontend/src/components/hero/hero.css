@@ -1,17 +1,13 @@
 .heroWrapper {
   width: 100%;
-  min-height: 460px;
+  min-height: 260px;
   background: white;
   position: relative;
   justify-content: flex-start;
   overflow: hidden;
+  padding-top: 20px;
 }
 
-.heroInner {
-  margin-left: 150px;
-  flex-direction: column;
-  z-index: 10;
-}
 
 .headerText {
   letter-spacing: 0.5px;
@@ -47,14 +43,14 @@
 }
 
 .heroImage {
-  position: absolute;
-  right: 0px;
-  top: 0px;
   height: 100%;
 }
 
 .heroImage img {
   height: 100%;
+  justify-content: center;
+  bottom: 20px;
+  top: 20px
 }
 
 
@@ -63,11 +59,11 @@
     width: 100%;
   }
   .heroImage img {
-    height: 100vw;
+    height: 70vw;
     object-fit: cover;
-    position: absolute;
-    left: 10%;
-    bottom: 10px;
+    justify-content: center;
+    bottom: 20px;
+    top: 30px
   }
   .heroWrapper {
     align-items: flex-end;
@@ -91,7 +87,10 @@
 @media (max-width: 550px) {
 
   .heroImage img {
-    bottom: 160px;
+    object-fit: cover;
+    justify-content: center;
+    bottom: 20px;
+    top: 40px;
   }
   .headerText {
     width: 80%;
@@ -103,5 +102,10 @@
   .headerText {
     width: 80%;
     font-size: 1.5rem;
+  }
+  .heroImage img {
+    justify-content: center;
+    bottom: 20px;
+    top: 50px;
   }
 }

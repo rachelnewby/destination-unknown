@@ -7,12 +7,13 @@ const Hero = () => {
     return(
         <div className='heroWrapper'>
             <div>
-            <div className="heroImage">
+                <div className="heroImage">
                     <img
                     src={Logo}
                     alt=""
                     />
                 </div>
+
             </div>
         </div>
     )
