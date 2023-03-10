@@ -20,8 +20,9 @@ body {
   justify-content: space-between;
   border: 5px solid #F9F1F0;
   border-radius: 15px;
-  padding: 2px;
-  width: 40%;
+  padding: 10px;
+  padding-top: 12px;
+  width: 50%;
   background-color: #F8AFA6;
 }
 
@@ -30,4 +31,5 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 2px;
 }
