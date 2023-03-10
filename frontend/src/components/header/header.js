@@ -13,7 +13,7 @@ import ScrollToTop from "../scroll-top/scroll-to-top";
              <div className='div-header'>
                  <div className='div-png'>
                      <NavLink to='/' onClick={handleLogoClick}>
-                        <img src={Logo} alt="logo" height='85%' width='85%'/>
+                        <img className='nav-logo' src={Logo} alt="logo" height='85%' width='85%'/>
                      </NavLink>
                  </div>
              </div>
