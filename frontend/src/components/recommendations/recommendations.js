@@ -20,8 +20,8 @@
 
     return (
       <div className="wrapper">
+        <h2 className="title">What to do</h2>
         <div className="button-group">
-          <h2 className="title">What to do</h2>
             <div className="button-wrapper">
                 <button type="button" onClick={() => handleClick(guide)} className="button">
                 <img src="/getyourguide.svg" alt="Get your guide icon" /> Guides

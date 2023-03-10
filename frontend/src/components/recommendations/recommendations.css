@@ -10,13 +10,16 @@
   }
   
   .button {
-    display: flex;
+    display: flex; 
     align-items: center;
     width: 120px;
     margin-bottom: 4px;
     border: 1px solid gray; /* set the initial border */
     border-radius: 4px; /* add rounded corners */
     transition: border-color 0.2s ease-in-out; /* add transition effect */
+    padding:10px;
+    border-radius:10px;
+    
   }
   
   .button:hover {

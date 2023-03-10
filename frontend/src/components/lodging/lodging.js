@@ -14,14 +14,14 @@ function Lodging({ cityData }) {
 
   return (
     <div className="lodging-wrapper">
-      <div className="button-group">
-        <h2 className="title">Where to stay</h2>
-          <Stack direction="horizontal" gap={3}>
+       <h2 className="title">Where to stay</h2>
+      <div className="button-group" style={{  display: "flex", alignItems: "center",}}>
+          <Stack direction="horizontal" gap={3} >
               <button type="button" onClick={() => handleClick(airbnb)} className="button">
-              <img src="/airbnb.png" alt="Airbnb icon" />
+              <img src="/airbnb.png" alt="Airbnb icon" />Airbnb
               </button>
               <button type="button" onClick={() => handleClick(kayak)} className="button">
-              <img src="/kayak.png" alt="Kayak icon" />
+              <img src="/kayak.png" alt="Kayak icon" />Kayak
               </button>
           </Stack>
       </div>
