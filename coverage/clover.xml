@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1677875773193" clover="3.2.0">
-  <project timestamp="1677875773193" name="All files">
-    <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4" elements="16" coveredelements="16" complexity="0" loc="12" ncloc="12" packages="2" files="3" classes="3"/>
+<coverage generated="1679418478819" clover="3.2.0">
+  <project timestamp="1679418478819" name="All files">
+    <metrics statements="29" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="5" elements="37" coveredelements="31" complexity="0" loc="29" ncloc="29" packages="2" files="7" classes="7"/>
     <package name="client">
-      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-      <file name="apikey.js" path="/Users/rachelnewby/Projects/Makers/engineering-projects/destination-unknown/api/client/apikey.js">
+      <metrics statements="25" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="5"/>
+      <file name="apikey.js" path="/Users/adam/Desktop/engineering-project-3/destination-unknown/api/client/apikey.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="flightClient.js" path="/Users/rachelnewby/Projects/Makers/engineering-projects/destination-unknown/api/client/flightClient.js">
+      <file name="flightClient.js" path="/Users/adam/Desktop/engineering-project-3/destination-unknown/api/client/flightClient.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
@@ -20,13 +20,42 @@
         <line num="12" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
       </file>
+      <file name="roadapi.js" path="/Users/adam/Desktop/engineering-project-3/destination-unknown/api/client/roadapi.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="roadgoatClient.js" path="/Users/adam/Desktop/engineering-project-3/destination-unknown/api/client/roadgoatClient.js">
+        <metrics statements="11" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+      <file name="roadsecret.js" path="/Users/adam/Desktop/engineering-project-3/destination-unknown/api/client/roadsecret.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
     </package>
     <package name="spec.client">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="mockFlightClientResponse.js" path="/Users/rachelnewby/Projects/Makers/engineering-projects/destination-unknown/api/spec/client/mockFlightClientResponse.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="mockFlightClientResponse.js" path="/Users/adam/Desktop/engineering-project-3/destination-unknown/api/spec/client/mockFlightClientResponse.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2407" count="1" type="stmt"/>
+      </file>
+      <file name="mockRoadgoat.js" path="/Users/adam/Desktop/engineering-project-3/destination-unknown/api/spec/client/mockRoadgoat.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="506" count="1" type="stmt"/>
       </file>
     </package>
   </project>

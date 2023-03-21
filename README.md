@@ -27,6 +27,10 @@ There were other ideas that we also considered such as tools to provide informat
 
 After scoping out several of the ideas at a high level, exploring the potential data we had access to and considering our tight time frame we opted to create our travel tool Destination Unknown travel.
 
+Here's a quick gif of our finished project.
+
+![](./readme_images/presentation.gif)
+
 # Planning
 
 Once we had chosen an idea we broke our planning down into successive stages:
@@ -144,13 +148,27 @@ It will then open in your browser at localhost:3000
 
 ## Backend Testing
 
-## Frontend Testing
+By keeping the code as light as possible we were able to create a relatively small backend but one that returned a great amount of data.
 
-To run the frontend Cypress testing suite, navigate into the 'frontend' folder and run:
-`npm run cypress:open`
+Our tests covered both the Roadgoat API call and the FlightLabs API call. Testing for both a completed response as well as for cathcing errors.
+
+The code coverage is ok at 89% but if we had more time it would be better to get this to 100% coverage.
 
 To run the backend Jest tests, navigate to the 'api' folder and run:
 `jest --coverage`
+
+![backend_test](readme_images/backend_test_coverage.png)
+
+## Frontend Testing
+
+For our front end testing we used the Cypress framework.
+
+All components were successfully unit tested before being introduced to the main branch.
+
+One limitation we found was that we could not test the content that loaded onto our flight price chart component. We could test the heading of the chart and that it had rendered but the nature of the library meant we could not access the content of each individual bar. This is because it renders onto something called a 'canvas'.
+
+To run the frontend Cypress testing suite, navigate into the 'frontend' folder and run:
+`npm run cypress:open`
 
 # Future Actions
 
@@ -161,20 +179,4 @@ To run the backend Jest tests, navigate to the 'api' folder and run:
 - Accessibility with regard to colours and text
 - Implement a weather data feature
 - Rather than linking to accommodation and events, list them on the page
-
-## Libraries Installed
-
-The chart:
-`npm i react-chartjs-2 chart.js`
-
-The loading wheel
-
-`npm i react-loading`
-
-# Contributors
-
-[Millennia Severino](https://github.com/MillieKS) <br>
-[Adam Hoar](https://github.com/amh4) <br>
-[Shaun Flood](https://github.com/ShaunFlood) <br>
-[Chioma Igwe](https://github.com/UserChi) <br>
-[Rachel Newby](https://github.com/rachelnewby) <br>
+- Use visual Cypress testing to check the flight price chart has rendered correctly.
